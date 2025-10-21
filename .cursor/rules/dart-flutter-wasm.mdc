@@ -1,0 +1,118 @@
+---
+globs: *.dart,*.yaml
+description: Dart/Flutter WASM 项目规范
+---
+
+# Dart/Flutter WASM 项目规范
+
+## 文件结构
+
+项目核心文件：
+- [lib/wasm_loader.dart](mdc:lib/wasm_loader.dart) - WASM 加载器核心类
+- [lib/earth_plugin_service.dart](mdc:lib/earth_plugin_service.dart) - 业务服务封装
+- [lib/main.dart](mdc:lib/main.dart) - 主应用入口
+- [lib/main_earth.dart](mdc:lib/main_earth.dart) - 地球查看器入口
+- [lib/earth_viewer.dart](mdc:lib/earth_viewer.dart) - 地球查看器组件
+
+## 编码规范
+
+### 1. 面向对象设计
+```dart
+// ✅ 好的做法：使用类封装
+class WasmLoader {
+  dynamic _module;
+  bool _isLoaded = false;
+  
+  Future<void> loadModule() async { }
+  dynamic callFunction(String name, List args) { }
+}
+
+// ❌ 避免：使用全局函数
+dynamic loadWasm() { }
+dynamic callWasmFunc(String name) { }
+```
+
+### 2. 错误处理
+```dart
+// ✅ 完整的错误处理
+try {
+  final result = await loader.loadModule();
+  return result;
+} catch (e) {
+  print('加载失败: $e');
+  rethrow;  // 或处理后返回默认值
+}
+
+// ❌ 避免：忽略错误
+await loader.loadModule();
+```
+
+### 3. 类型安全
+```dart
+// ✅ 明确类型
+final js.JsObject jsModule = _module as js.JsObject;
+final js.JsFunction func = jsModule['function'] as js.JsFunction;
+
+// ❌ 避免：使用 dynamic 而不检查
+final func = _module['function'];
+func.call();
+```
+
+## JavaScript 互操作
+
+### 当前兼容性
+- Flutter 3.24.5 使用 `dart:js` (不是 `dart:js_interop`)
+- 使用 `js.JsObject` 和 `js.JsFunction`
+- 使用 `js.context` 访问全局对象
+
+### 正确用法
+```dart
+import 'dart:js' as js;
+
+// 获取全局对象
+_module = js.context['Module'];
+
+// 调用函数
+if (func is js.JsFunction) {
+  return func.apply(args);
+}
+
+// 检查属性
+if (obj is js.JsObject && obj.hasProperty('method')) {
+  // 使用属性
+}
+```
+
+## WASM 加载流程
+
+1. **动态加载 JS** → 创建 `<script>` 标签加载 `earthplugin_web.js`
+2. **获取 Module** → 从 `js.context['Module']` 获取
+3. **等待初始化** → 检查 `_malloc` 等函数是否可用
+4. **调用函数** → 使用 `js.JsFunction.apply()`
+
+## 问题解决策略
+
+### 遇到编译错误
+1. 检查是否使用了正确的 dart:js API
+2. 确认类型转换是否正确
+3. 查看 Flutter 版本兼容性
+4. 修复后重新构建，不要绕过问题
+
+### WASM 加载失败
+1. 确认文件路径正确（使用 HTTP 服务器）
+2. 检查 CORS 配置
+3. 查看浏览器控制台错误
+4. 验证 Module 对象是否正确初始化
+
+### Canvas 渲染问题
+1. 确认 Canvas 元素已创建
+2. 检查 WASM 是否有渲染函数
+3. 验证 Module.canvas 配置
+4. 查看 WASM 输出日志
+
+## 性能优化
+
+- 使用 `cwrap` 包装频繁调用的函数
+- 重用内存缓冲区避免频繁 malloc/free
+- 使用 Release 模式构建生产版本
+- 让浏览器缓存 WASM 文件
