@@ -139,6 +139,7 @@ window.Module.ReceiveViewModelCommand('earth.InputEvent', encodeMouseDown(100, 2
 ## 📖 相关文档
 
 - [WASM_API.md](./WASM_API.md) - WASM 模块 API 使用指南
+- [WASM_FUNCTIONS_ANALYSIS.md](./WASM_FUNCTIONS_ANALYSIS.md) - **函数完整分析（含混淆函数）**
 - [WASM_FULL_ANALYSIS.md](./WASM_FULL_ANALYSIS.md) - 完整的 WASM 分析
 - [ARCHITECTURE.md](./ARCHITECTURE.md) - 项目架构说明
 
