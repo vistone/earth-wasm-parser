@@ -142,28 +142,8 @@ class _EarthViewerState extends State<EarthViewer> {
       print('[Dart] ccall 类型: ${module['ccall']?.runtimeType}');
       print('[Dart] _initialize 类型: ${module['_initialize']?.runtimeType}');
 
-      // 拦截 ReceiveViewModelCommand 以显示鼠标事件数据
-      // 使用 JavaScript 代码包装而不是 Dart，以保持函数签名正确
-      js.context.callMethod('eval', [
-        '''
-(function() {
-  var originalReceiveCommand = Module.ReceiveViewModelCommand;
-  if (originalReceiveCommand) {
-    Module.ReceiveViewModelCommand = function(messageType, data) {
-      console.log('[鼠标事件] 类型:', messageType);
-      if (data && data.length !== undefined) {
-        console.log('[鼠标事件] 数据长度:', data.length);
-        var preview = Array.from(data.slice(0, 32));
-        console.log('[鼠标事件] 数据内容 (十六进制):', preview.map(b => b.toString(16).padStart(2, '0')).join(' '));
-        console.log('[鼠标事件] 数据内容 (十进制):', preview);
-      }
-      return originalReceiveCommand.call(this, messageType, data);
-    };
-    console.log('[JS] ReceiveViewModelCommand 已包装');
-  }
-})();
-'''
-      ]);
+      // 暂时禁用拦截，恢复鼠标功能
+      // TODO: 需要找到正确的函数名和调用时机
 
       // 调用 ccall("initialize", null, ["string"], [BASE64_INIT])
       final ccall = module['ccall'];
