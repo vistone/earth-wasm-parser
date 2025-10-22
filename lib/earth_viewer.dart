@@ -139,8 +139,14 @@ class _EarthViewerState extends State<EarthViewer> {
       module['earth-ready'] = true;
 
       print('[Dart] Module 重新配置完成');
+      print('[Dart] Canvas 对象: ${module['canvas'] != null}');
+      print('[Dart] Canvas ID: ${module['canvas']?['id']}');
       print('[Dart] ccall 类型: ${module['ccall']?.runtimeType}');
       print('[Dart] _initialize 类型: ${module['_initialize']?.runtimeType}');
+      
+      // 检查 Canvas 事件处理
+      print('[Dart] Canvas 指针事件: ${_canvas?.style.pointerEvents}');
+      print('[Dart] Canvas 可访问: ${_canvas != null}');
 
       // 暂时禁用拦截，恢复鼠标功能
       // TODO: 需要找到正确的函数名和调用时机
