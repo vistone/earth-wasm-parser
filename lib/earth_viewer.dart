@@ -40,10 +40,7 @@ class _EarthViewerState extends State<EarthViewer> {
         _status = '正在配置 Module...';
       });
 
-      // 2. 先设置 Module.canvas（必须在加载 WASM 之前）
-      _preConfigureModule();
-
-      // 3. 配置事件监听器
+      // 2. 配置 Emscripten Module
       _configureModule();
 
       setState(() {
@@ -117,27 +114,6 @@ class _EarthViewerState extends State<EarthViewer> {
     });
   }
 
-  /// 预先配置 Module（在加载 WASM 之前）
-  void _preConfigureModule() {
-    if (_canvas == null) {
-      throw Exception('Canvas 对象为 null');
-    }
-
-    print('[Dart] 预先配置 Module.canvas');
-
-    // 创建 Module 对象（如果不存在）
-    if (js.context['Module'] == null) {
-      js.context['Module'] = js.JsObject.jsify({});
-    }
-
-    final module = js.context['Module'] as js.JsObject;
-    
-    // 设置 canvas（必须在加载 WASM 之前）
-    module['canvas'] = _canvas;
-    
-    print('[Dart] Module.canvas 已设置为: ${_canvas?.id}');
-  }
-
   /// 配置 Emscripten Module 对象（参考成功的 HTML）
   void _configureModule() {
     if (_canvas == null) {
@@ -156,24 +132,15 @@ class _EarthViewerState extends State<EarthViewer> {
       final module = js.context['Module'] as js.JsObject;
 
       // 按照参考 HTML 的方式配置
-      // canvas 已经在 _preConfigureModule 中设置，这里不再重复设置
+      module['canvas'] = _canvas;
       module['print'] = null;
       module['printErr'] = null;
       module['initArguments'] = js.JsArray.from([base64Init]);
       module['earth-ready'] = true;
 
       print('[Dart] Module 重新配置完成');
-      print('[Dart] Canvas 对象: ${module['canvas'] != null}');
-      print('[Dart] Canvas ID: ${module['canvas']?['id']}');
       print('[Dart] ccall 类型: ${module['ccall']?.runtimeType}');
       print('[Dart] _initialize 类型: ${module['_initialize']?.runtimeType}');
-      
-      // 检查 Canvas 事件处理
-      print('[Dart] Canvas 指针事件: ${_canvas?.style.pointerEvents}');
-      print('[Dart] Canvas 可访问: ${_canvas != null}');
-
-      // 暂时禁用拦截，恢复鼠标功能
-      // TODO: 需要找到正确的函数名和调用时机
 
       // 调用 ccall("initialize", null, ["string"], [BASE64_INIT])
       final ccall = module['ccall'];
