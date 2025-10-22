@@ -31,6 +31,7 @@ migrate_working_dir/
 /build/
 
 # Web related
+wasm/local_file_system_compiled.js
 
 # Symbolication related
 app.*.symbols
