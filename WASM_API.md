@@ -17,6 +17,82 @@ wasm/
 
 所有函数都通过全局 `Module` 对象访问。
 
+### 如何获取 Module 对象
+
+#### 1. 动态加载 WASM 模块后访问
+
+```javascript
+// 方式1：从全局 window 对象获取
+const Module = window.Module;
+
+// 方式2：从 js.context 获取（Dart 中）
+import 'dart:js' as js;
+final module = js.context['Module'] as js.JsObject;
+
+// 方式3：确保 JS 文件加载完成后访问
+const script = document.createElement('script');
+script.src = 'wasm/earthplugin_web.js';
+script.onload = () => {
+  const Module = window.Module;
+  console.log('Module 已加载:', Module);
+};
+document.head.appendChild(script);
+```
+
+#### 2. 监听 earth-wasm-started 事件后访问
+
+```javascript
+window.addEventListener('earth-wasm-started', (event) => {
+  const Module = window.Module;
+  console.log('WASM 已启动，可以使用 Module:', Module);
+  
+  // 现在可以访问 Module 的所有函数
+  const ccall = Module.ccall;
+  const initialize = Module._initialize;
+});
+```
+
+### 如何检查函数是否存在
+
+```javascript
+// 检查函数是否存在
+if (Module && Module.ResizeViewport) {
+  console.log('ResizeViewport 可用');
+} else {
+  console.log('ResizeViewport 不可用');
+}
+
+// 检查函数类型
+console.log('ccall 类型:', typeof Module.ccall);
+console.log('ccall 是函数?', Module.ccall instanceof Function);
+```
+
+### Dart 中如何使用
+
+```dart
+import 'dart:js' as js;
+
+// 获取 Module 对象
+final module = js.context['Module'] as js.JsObject;
+
+// 调用 ccall
+final ccall = module['ccall'];
+if (ccall != null && ccall is js.JsFunction) {
+  final ret = ccall.apply([
+    'initialize',
+    null,
+    js.JsArray.from(['string']),
+    js.JsArray.from([base64Config]),
+  ]);
+}
+
+// 调用 ResizeViewport
+final resize = module['ResizeViewport'];
+if (resize != null && resize is js.JsFunction) {
+  resize.apply([width, height]);
+}
+```
+
 ### 初始化函数
 
 #### `Module["_initialize"]`
@@ -75,6 +151,71 @@ Module.ReceiveViewModelCommand(protobufMessageType, dataArray);
 - `dataArray` (Uint8Array): Protobuf 编码的数据
 
 **说明**：此函数用于处理鼠标、键盘等输入事件。WASM 模块会自动注册事件监听器，无需手动调用。
+
+**如何拦截和监听（Dart）**：
+```dart
+import 'dart:js' as js;
+
+// 获取原始函数
+final module = js.context['Module'] as js.JsObject;
+final originalReceiveCommand = module['ReceiveViewModelCommand'];
+
+if (originalReceiveCommand != null && originalReceiveCommand is js.JsFunction) {
+  // 创建包装函数
+  final wrapperFunc = (js.JsFunction originalFunc) {
+    return js.allowInterop((String messageType, dynamic data) {
+      // 打印事件信息
+      print('[鼠标事件] 类型: $messageType');
+      
+      if (data is js.JsObject) {
+        final dataLength = data['length'];
+        print('[鼠标事件] 数据长度: $dataLength');
+        
+        // 提取并打印数据内容
+        final list = <int>[];
+        final maxBytes = 32;
+        final actualBytes = dataLength is int ? dataLength.clamp(0, maxBytes) : maxBytes;
+        
+        for (int i = 0; i < actualBytes; i++) {
+          try {
+            final byte = data[i];
+            if (byte is int) {
+              list.add(byte);
+            }
+          } catch (e) {
+            break;
+          }
+        }
+        
+        print('[鼠标事件] 数据内容 (十六进制): ${list.map((b) => b.toRadixString(16).padLeft(2, '0')).join(' ')}');
+        print('[鼠标事件] 数据内容 (十进制): $list');
+      }
+      
+      // 调用原始函数
+      return originalFunc.apply([messageType, data]);
+    });
+  }(originalReceiveCommand);
+  
+  // 替换原始函数
+  module['ReceiveViewModelCommand'] = wrapperFunc;
+}
+```
+
+**JavaScript 中如何拦截**：
+```javascript
+// 保存原始函数
+const originalReceiveCommand = Module.ReceiveViewModelCommand;
+
+// 创建包装函数
+Module.ReceiveViewModelCommand = function(messageType, data) {
+  console.log('[鼠标事件] 类型:', messageType);
+  console.log('[鼠标事件] 数据长度:', data.length);
+  console.log('[鼠标事件] 数据内容:', Array.from(data.slice(0, 32)));
+  
+  // 调用原始函数
+  return originalReceiveCommand.call(this, messageType, data);
+};
+```
 
 ---
 
@@ -470,6 +611,174 @@ window.addEventListener('resize', () => {
   const height = window.innerHeight;
   Module.ResizeViewport(width, height);
 });
+```
+
+---
+
+## 完整使用示例
+
+### Dart/Flutter 完整示例
+
+```dart
+import 'dart:html' as html;
+import 'dart:js' as js;
+
+class EarthViewer {
+  static const String base64Config = 'GgpFbXNjcmlwdGVuKgV6aF9DTjInQUl6YVN5RDhKYTVBSUlpSFZtZ0RBTmhwNXlnT0FrYklpMmhCWjVBWAFgAXgBgAEBkgEJMTAuOTEuMC4xqAEBsgEnQUl6YVN5QUFqWEY4dHRvRWlVMkdZU3dtUkJ2aU8wdHdVODNGa3lB';
+  
+  // 1. 监听 earth-wasm-started 事件
+  void setupModuleListener() {
+    html.window.addEventListener('earth-wasm-started', (event) {
+      final module = js.context['Module'] as js.JsObject;
+      
+      // 2. 获取并调用 ccall
+      final ccall = module['ccall'];
+      if (ccall != null && ccall is js.JsFunction) {
+        ccall.apply([
+          'initialize',
+          null,
+          js.JsArray.from(['string']),
+          js.JsArray.from([base64Config]),
+        ]);
+      }
+      
+      // 3. 获取并调用 ResizeViewport
+      Future.delayed(const Duration(seconds: 1), () {
+        final resize = module['ResizeViewport'];
+        if (resize != null && resize is js.JsFunction) {
+          final width = html.window.innerWidth ?? 1920;
+          final height = html.window.innerHeight ?? 1080;
+          resize.apply([width, height]);
+        }
+      });
+      
+      // 4. 拦截 ReceiveViewModelCommand
+      final originalReceiveCommand = module['ReceiveViewModelCommand'];
+      if (originalReceiveCommand != null && originalReceiveCommand is js.JsFunction) {
+        final wrapperFunc = js.allowInterop((String messageType, dynamic data) {
+          print('[事件] 类型: $messageType, 数据长度: ${data['length']}');
+          return originalReceiveCommand.apply([messageType, data]);
+        });
+        module['ReceiveViewModelCommand'] = wrapperFunc;
+      }
+    });
+  }
+  
+  // 5. 加载 WASM 模块
+  void loadWasmModule() {
+    final script = html.ScriptElement()
+      ..src = 'wasm/earthplugin_web.js'
+      ..type = 'text/javascript';
+    
+    script.onLoad.listen((_) {
+      print('WASM JS 文件加载成功');
+    });
+    
+    html.document.head?.append(script);
+  }
+}
+```
+
+### JavaScript 完整示例
+
+```javascript
+// 1. 加载 WASM 模块
+const script = document.createElement('script');
+script.src = 'wasm/earthplugin_web.js';
+script.onload = () => {
+  console.log('WASM JS 文件加载成功');
+};
+document.head.appendChild(script);
+
+// 2. 监听 earth-wasm-started 事件
+window.addEventListener('earth-wasm-started', (event) => {
+  const Module = window.Module;
+  
+  // 3. 调用初始化
+  const base64Config = 'GgpFbXNjcmlwdGVuKgV6aF9DTjInQUl6YVN5RDhKYTVBSUlpSFZtZ0RBTmhwNXlnT0FrYklpMmhCWjVBWAFgAXgBgAEBkgEJMTAuOTEuMC4xqAEBsgEnQUl6YVN5QUFqWEY4dHRvRWlVMkdZU3dtUkJ2aU8wdHdVODNGa3lB';
+  Module.ccall('initialize', null, ['string'], [base64Config]);
+  
+  // 4. 调整视口大小
+  setTimeout(() => {
+    Module.ResizeViewport(window.innerWidth, window.innerHeight);
+  }, 1000);
+  
+  // 5. 拦截 ReceiveViewModelCommand
+  const originalReceiveCommand = Module.ReceiveViewModelCommand;
+  Module.ReceiveViewModelCommand = function(messageType, data) {
+    console.log('[事件] 类型:', messageType);
+    console.log('[事件] 数据长度:', data.length);
+    console.log('[事件] 数据内容:', Array.from(data.slice(0, 32)));
+    return originalReceiveCommand.call(this, messageType, data);
+  };
+});
+
+// 6. 监听窗口大小变化
+window.addEventListener('resize', () => {
+  if (window.Module && window.Module.ResizeViewport) {
+    window.Module.ResizeViewport(window.innerWidth, window.innerHeight);
+  }
+});
+```
+
+### 如何调试和查看所有可用函数
+
+```javascript
+// 列出 Module 对象的所有属性
+function listModuleFunctions() {
+  const Module = window.Module;
+  console.log('=== Module 对象的所有属性 ===');
+  
+  for (const key in Module) {
+    const value = Module[key];
+    const type = typeof value;
+    console.log(`${key}: ${type}`);
+    
+    if (type === 'function') {
+      console.log(`  -> 函数: ${key}`);
+    }
+  }
+}
+
+// 监听后调用
+window.addEventListener('earth-wasm-started', () => {
+  listModuleFunctions();
+});
+```
+
+### 如何检查特定函数是否存在
+
+```javascript
+function checkFunctionExists(functionName) {
+  const Module = window.Module;
+  
+  if (!Module) {
+    console.log(`${functionName}: Module 对象不存在`);
+    return false;
+  }
+  
+  if (!Module[functionName]) {
+    console.log(`${functionName}: 函数不存在`);
+    return false;
+  }
+  
+  if (typeof Module[functionName] !== 'function') {
+    console.log(`${functionName}: 不是函数 (类型: ${typeof Module[functionName]})`);
+    return false;
+  }
+  
+  console.log(`${functionName}: ✓ 可用`);
+  return true;
+}
+
+// 使用示例
+checkFunctionExists('ccall');
+checkFunctionExists('cwrap');
+checkFunctionExists('ResizeViewport');
+checkFunctionExists('ReceiveViewModelCommand');
+checkFunctionExists('_initialize');
+checkFunctionExists('_malloc');
+checkFunctionExists('_free');
 ```
 
 ---

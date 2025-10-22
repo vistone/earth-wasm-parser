@@ -142,6 +142,64 @@ class _EarthViewerState extends State<EarthViewer> {
       print('[Dart] ccall 类型: ${module['ccall']?.runtimeType}');
       print('[Dart] _initialize 类型: ${module['_initialize']?.runtimeType}');
 
+      // 拦截 ReceiveViewModelCommand 以显示鼠标事件数据
+      final originalReceiveCommand = module['ReceiveViewModelCommand'];
+      if (originalReceiveCommand != null &&
+          originalReceiveCommand is js.JsFunction) {
+        print('[Dart] 开始拦截 ReceiveViewModelCommand');
+
+        // 创建包装函数
+        final wrapperFunc = (js.JsFunction originalFunc) {
+          return js.allowInterop((String messageType, dynamic data) {
+            // 打印事件信息
+            print('[鼠标事件] 类型: $messageType');
+
+            if (data is js.JsObject) {
+              try {
+                // 尝试获取数据长度
+                final dataLength = data['length'];
+                print('[鼠标事件] 数据长度: $dataLength');
+
+                // 提取并打印前几个字节的内容
+                final list = <int>[];
+                final maxBytes = 32; // 最多显示32字节
+                final actualBytes = dataLength is int
+                    ? dataLength.clamp(0, maxBytes)
+                    : maxBytes;
+
+                for (int i = 0; i < actualBytes; i++) {
+                  try {
+                    final byte = data[i];
+                    if (byte is int) {
+                      list.add(byte);
+                    }
+                  } catch (e) {
+                    break;
+                  }
+                }
+
+                print(
+                    '[鼠标事件] 数据内容 (前${list.length}字节): ${list.map((b) => b.toRadixString(16).padLeft(2, '0')).join(' ')}');
+
+                // 打印十进制格式
+                print('[鼠标事件] 数据内容 (十进制): $list');
+              } catch (e) {
+                print('[鼠标事件] 无法解析数据: $e');
+              }
+            } else {
+              print('[鼠标事件] 数据类型: ${data.runtimeType}');
+            }
+
+            // 调用原始函数
+            return originalFunc.apply([messageType, data]);
+          });
+        }(originalReceiveCommand);
+
+        // 替换原始函数
+        module['ReceiveViewModelCommand'] = wrapperFunc;
+        print('[Dart] ReceiveViewModelCommand 已包装，开始监听鼠标事件');
+      }
+
       // 调用 ccall("initialize", null, ["string"], [BASE64_INIT])
       final ccall = module['ccall'];
       if (ccall != null && ccall is js.JsFunction) {
