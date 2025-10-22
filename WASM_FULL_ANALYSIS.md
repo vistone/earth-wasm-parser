@@ -518,50 +518,138 @@ function createInputEvent(type, x, y, button = 0, deltaX = 0, deltaY = 0) {
 }
 ```
 
-## 11. 其他消息类型
+## 11. 完整的 Protobuf 消息类型列表
 
-### 配置文件解析
+### 在 WASM 代码中找到的所有消息类型
 
-`wasm/config.base64` 包含多个服务的配置信息：
-
-- `delve_service` - 开发服务
-- `earth_document_http_service` - 文档服务
-- `earth_gws_service` - GWS 服务
-- `fife_service` - FIFE 服务
-- `firebase_dynamic_links_service` - Firebase 服务
-- `geo_photo_metadata_service` - 照片元数据服务
-- `geo_photo_thumbnail_service` - 照片缩略图服务
-- `geo_photo_tile_service` - 照片瓦片服务
-- `geocoding_service` - 地理编码服务
-- `ice_service` - ICE 服务
-- `picker_service` - 选择器服务
-
-每个服务配置包含：
-- 服务名称
-- 端点 URL
-- 可选参数
-
-### 推测的配置 Protobuf 结构
-
+#### 1. earth.InputEvent（主要输入事件）
 ```protobuf
-message ServiceConfig {
-  optional string name = 1;
-  optional EndpointConfig endpoint = 2;
-}
-
-message EndpointConfig {
-  optional string url = 1;
-  repeated int32 ports = 2;
-}
-
-message EarthConfig {
-  repeated ServiceConfig services = 1;
-  optional VersionInfo version = 2;
-  optional ApiKeys api_keys = 3;
+message InputEvent {
+  optional bool field1 = 1;
+  optional int32 button_state = 2;
+  optional int32 event_type = 3;
+  optional int32 field4 = 4;
+  optional double x = 5;
+  optional double y = 6;
+  optional double delta_x = 7;
+  optional double delta_y = 8;
+  optional bool field10 = 10;
 }
 ```
 
-## 12. 已知问题
+#### 2. wireless_android_play_playlog.* 系列（日志相关）
+```protobuf
+message JsClientInfo { /* ... */ }
+message ClientInfo { /* ... */ }
+message LogEventKeyValues { /* ... */ }
+message ComplianceData { /* ... */ }
+message LogEvent { /* ... */ }
+message LogRequest { /* ... */ }
+message LogResponse { /* ... */ }
+message JsLogResponseExtension { /* ... */ }
+```
+
+#### 3. 配置文件消息（config.base64）
+
+**配置文件中包含的服务列表**：
+
+```
+├── delve_service                          - 开发服务
+├── earth_document_http_service           - 文档服务
+├── earth_gws_service                      - GWS 服务
+├── fife_service                           - FIFE 服务
+├── firebase_dynamic_links_service         - Firebase 动态链接服务
+├── geo_photo_metadata_service             - 地理照片元数据服务
+├── geo_photo_thumbnail_service            - 地理照片缩略图服务
+├── geo_photo_tile_service                 - 地理照片瓦片服务
+├── geocoding_service                      - 地理编码服务
+├── mapspro_service                        - Maps Pro 服务
+├── picker_service                         - 选择器服务
+├── rocktree_service                       - Rocktree 服务
+├── scotty_download_customer_service       - Scotty 下载服务
+├── scotty_upload_customer_service         - Scotty 上传服务
+└── onepick_v2_service                     - OnePick V2 服务
+```
+
+**配置文件 Protobuf 结构推测**：
+```protobuf
+message ServiceConfig {
+  optional string name = 1;              // 服务名称
+  optional EndpointConfig endpoint = 2;  // 端点配置
+}
+
+message EndpointConfig {
+  optional string url = 1;              // URL
+  repeated int32 ports = 2;             // 端口列表
+}
+
+message EarthServiceConfig {
+  repeated ServiceConfig services = 1;  // 服务列表
+}
+```
+
+#### 4. 初始化消息（initArguments）
+
+**初始化参数包含**：
+```protobuf
+message InitArguments {
+  optional string platform = 1;  // "Emscripten"
+  optional string api_key = 2;    // Google API Key (包含地区标识)
+  optional string locale = 3;     // "zh_CN"
+  optional string version = 4;   // "10.91.0.1"
+  optional bytes config = 5;      // 配置数据
+}
+```
+
+**实际数据**：
+- Platform: `"Emscripten"`
+- API Key: `"zh_CN2'AIzaSyD8Ja5AIIiHVmgDANhp5ygOAkbIi2hBZ5AX"` 和 `"'AIzaSyAAjXF8ttoEiU2GYSwmRBviO0twU83FkyA"`
+- Version: `"10.91.0.1"`
+- Locale: `"zh_CN"`
+
+### 消息类型使用情况
+
+| 消息类型 | 用途 | 调用位置 |
+|---------|------|---------|
+| `earth.InputEvent` | 鼠标和键盘输入事件 | `lib/earth_viewer.dart` |
+| `wireless_android_play_playlog.*` | Google Play 日志上报 | `wasm/plugins_compiled.js` |
+| 配置消息 | 服务端点配置 | `wasm/config.base64` |
+| 初始化消息 | WASM 初始化参数 | `lib/earth_viewer.dart` |
+
+### 消息类型统计
+
+- **earth.***: 1个（InputEvent）
+- **wireless_android_play_playlog.***: 8个（日志相关）
+- **配置消息**: 1个（包含15个服务配置）
+- **初始化消息**: 1个（包含 API Key、版本等）
+
+**总计**: 11个不同的 Protobuf 消息类型或结构
+
+## 12. Protobuf 消息访问总结
+
+### 可以直接使用的消息
+
+1. **earth.InputEvent** - 用于鼠标和滚轮事件
+   - 已知所有字段
+   - 有完整的编码实现
+   - 通过 `ReceiveViewModelCommand` 调用
+
+2. **初始化消息** - 用于 WASM 初始化
+   - 包含平台、API Key、版本信息
+   - 通过 `initArguments` 传递
+
+### 仅在内部使用的消息
+
+3. **wireless_android_play_playlog.*** - 日志上报
+   - 8个消息类型
+   - 仅在 `plugins_compiled.js` 内部使用
+   - 不需要直接调用
+
+4. **配置消息** - 服务端点配置
+   - 包含15个服务的配置
+   - 自动加载，不需要手动解析
+
+## 13. 已知问题和限制
 
 1. 鼠标事件必须手动注入，WASM 不会自动处理
 2. `Module.canvas` 必须在加载 WASM 之前设置
@@ -571,4 +659,6 @@ message EarthConfig {
 6. API Key 硬编码在初始化参数中
 7. Wire type 3、4、6、7 含义未知（可能已被废弃）
 8. Button state = 4 同时表示释放和右键（需要区分）
+9. wireless_android_play_playlog 消息结构未公开，无法解析
+10. 配置文件包含的某些服务可能不再使用
 
