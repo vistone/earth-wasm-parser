@@ -1,0 +1,25 @@
+## 为什么需要手动注入鼠标事件
+
+从 wasm/plugins_compiled.js 分析：
+
+1. **ReceiveViewModelCommand 定义**：
+   - 在 plugins_compiled.js 中调用 `window.Module.ReceiveViewModelCommand`
+   - 函数存在，等待外部调用
+
+2. **WASM 不会自动注册事件**：
+   - earthplugin_web.js 中没有 `addEventListener` 代码
+   - WASM 提供函数接口，不主动监听 DOM 事件
+
+3. **需要手动注入的原因**：
+   - Canvas 的鼠标事件不会自动传给 WASM
+   - 需要手动监听 mousedown/mousemove/mouseup/wheel
+   - 将事件编码成 Protobuf 格式
+   - 调用 ReceiveViewModelCommand 传递给 WASM
+
+4. **编码格式**：
+   - mousedown: 28 字节，button state = 0/1/2
+   - mousemove: 26 字节，type = 3
+   - mouseup: 28 字节，type = 2，button state = 4
+   - wheel: 46 字节，type = 4，包含 deltaX/deltaY
+
+因此：**WASM 模块设计为被动接收事件，不主动监听 DOM，所以必须手动注入事件监听器。**

@@ -33,7 +33,7 @@ class _EarthViewerState extends State<EarthViewer> {
 
       // 1. 创建 Canvas 元素
       _createCanvas();
-      
+
       // 等待 Canvas 注册
       await Future.delayed(const Duration(milliseconds: 100));
 
@@ -80,7 +80,7 @@ class _EarthViewerState extends State<EarthViewer> {
       ..style.touchAction = 'none'
       ..setAttribute('oncontextmenu', 'event.preventDefault()')
       ..setAttribute('tabindex', '1');
-    
+
     // 直接添加到 body（不使用 HtmlElementView）
     html.document.body?.append(_canvas!);
 
@@ -89,12 +89,12 @@ class _EarthViewerState extends State<EarthViewer> {
 
     print('[Dart] Canvas 已直接挂载到 DOM: $_canvasId');
   }
-  
+
   /// 设置鼠标控制
   void _setupMouseControl() {
     print('[Dart] 准备注入鼠标控制脚本');
   }
-  
+
   /// 注入鼠标控制（使用最小化的 protobuf 数据）
   void _injectMouseControl() {
     final jsCode = '''
@@ -276,7 +276,7 @@ class _EarthViewerState extends State<EarthViewer> {
       }, 1500);
     })();
     ''';
-    
+
     js.context.callMethod('eval', [jsCode]);
     print('[Dart] 鼠标控制已注入');
   }
@@ -288,26 +288,27 @@ class _EarthViewerState extends State<EarthViewer> {
     }
 
     print('[Dart] 配置 Module，参考成功的逻辑');
-    
-    const base64Init = 'GgpFbXNjcmlwdGVuKgV6aF9DTjInQUl6YVN5RDhKYTVBSUlpSFZtZ0RBTmhwNXlnT0FrYklpMmhCWjVBWAFgAXgBgAEBkgEJMTAuOTEuMC4xqAEBsgEnQUl6YVN5QUFqWEY4dHRvRWlVMkdZU3dtUkJ2aU8wdHdVODNGa3lB';
+
+    const base64Init =
+        'GgpFbXNjcmlwdGVuKgV6aF9DTjInQUl6YVN5RDhKYTVBSUlpSFZtZ0RBTmhwNXlnT0FrYklpMmhCWjVBWAFgAXgBgAEBkgEJMTAuOTEuMC4xqAEBsgEnQUl6YVN5QUFqWEY4dHRvRWlVMkdZU3dtUkJ2aU8wdHdVODNGa3lB';
 
     // 监听 earth-wasm-started 事件
     html.window.addEventListener('earth-wasm-started', (event) {
       print('[事件] earth-wasm-started 触发');
-      
+
       final module = js.context['Module'] as js.JsObject;
-      
+
       // 按照参考 HTML 的方式配置
       module['canvas'] = _canvas;
       module['print'] = null;
       module['printErr'] = null;
       module['initArguments'] = js.JsArray.from([base64Init]);
       module['earth-ready'] = true;
-      
+
       print('[Dart] Module 重新配置完成');
       print('[Dart] ccall 类型: ${module['ccall']?.runtimeType}');
       print('[Dart] _initialize 类型: ${module['_initialize']?.runtimeType}');
-      
+
       // 调用 ccall("initialize", null, ["string"], [BASE64_INIT])
       final ccall = module['ccall'];
       if (ccall != null && ccall is js.JsFunction) {
@@ -320,22 +321,23 @@ class _EarthViewerState extends State<EarthViewer> {
             js.JsArray.from([base64Init]),
           ]);
           print('[Dart] initialize 返回: $ret');
-          
+
           // 检查状态
           Future.delayed(const Duration(seconds: 1), () {
             print('[Dart] earth-ready: ${module['earth-ready']}');
             print('[Dart] ctx: ${module['ctx'] != null}');
-            
+
             // 调用 ResizeViewport
             final resize = module['ResizeViewport'];
             if (resize != null && resize is js.JsFunction) {
               resize.apply([800, 600]);
               print('[Dart] ResizeViewport(800, 600) 已调用');
             }
-            
+
             // 检查函数
-            print('[Dart] ReceiveViewModelCommand: ${module['ReceiveViewModelCommand']?.runtimeType}');
-            
+            print(
+                '[Dart] ReceiveViewModelCommand: ${module['ReceiveViewModelCommand']?.runtimeType}');
+
             // 注入鼠标控制脚本（因为 WASM 不会自动注册）
             Future.delayed(const Duration(milliseconds: 500), () {
               _injectMouseControl();
@@ -346,7 +348,7 @@ class _EarthViewerState extends State<EarthViewer> {
         }
       }
     });
-    
+
     print('[Dart] 已设置 earth-wasm-started 监听器');
   }
 
@@ -369,7 +371,7 @@ class _EarthViewerState extends State<EarthViewer> {
     });
 
     html.document.head?.append(script);
-    
+
     // 等待加载和初始化
     await completer;
     await Future.delayed(const Duration(seconds: 3));
@@ -386,7 +388,8 @@ class _EarthViewerState extends State<EarthViewer> {
             width: double.infinity,
             padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
             decoration: BoxDecoration(
-              color: _isLoading ? Colors.orange.shade100 : Colors.green.shade100,
+              color:
+                  _isLoading ? Colors.orange.shade100 : Colors.green.shade100,
               boxShadow: [
                 BoxShadow(
                   color: Colors.black.withOpacity(0.1),
@@ -415,13 +418,15 @@ class _EarthViewerState extends State<EarthViewer> {
                   style: TextStyle(
                     fontSize: 14,
                     fontWeight: FontWeight.w500,
-                    color: _isLoading ? Colors.orange.shade900 : Colors.green.shade900,
+                    color: _isLoading
+                        ? Colors.orange.shade900
+                        : Colors.green.shade900,
                   ),
                 ),
               ],
             ),
           ),
-          
+
           // Canvas 容器（地球渲染区域）
           Expanded(
             child: Container(
@@ -432,7 +437,8 @@ class _EarthViewerState extends State<EarthViewer> {
                         mainAxisAlignment: MainAxisAlignment.center,
                         children: [
                           const CircularProgressIndicator(
-                            valueColor: AlwaysStoppedAnimation<Color>(Colors.blue),
+                            valueColor:
+                                AlwaysStoppedAnimation<Color>(Colors.blue),
                           ),
                           const SizedBox(height: 24),
                           Text(
@@ -464,5 +470,3 @@ class _EarthViewerState extends State<EarthViewer> {
     super.dispose();
   }
 }
-
-
