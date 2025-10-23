@@ -1,0 +1,18 @@
+syntax = "editions";
+
+package maps_rdp;
+
+import "geo/serving/proto/directions/vehicle_physical_attributes.proto";
+import "maps/directions/customization/annotations/client/annotation_data_platform_experiments.proto";
+import "maps/directions/customization/config/serving_protos/parameter_value.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+
+message DecorationParams {
+    repeated string decoration_customization_ids = 3 [deprecated = true];
+    optional maps_directions_customization.AnnotationDataPlatformExperiment annotation_data_platform_experiment = 5 [deprecated = true];
+    map<string, maps_directions_customization.ParameterValue> decoration_parameters = 6 [deprecated = true];
+    optional geo_serving_proto.directions.VehiclePhysicalAttributes vehicle_physical_attributes = 7;
+    optional bool enable_decoration_parameters = 8;
+    
+    reserved 1, 2, 4;
+}

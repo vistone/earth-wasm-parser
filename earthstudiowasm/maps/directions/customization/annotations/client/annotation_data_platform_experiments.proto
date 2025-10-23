@@ -1,0 +1,10 @@
+syntax = "proto2";
+
+package maps_directions_customization;
+
+message AnnotationDataPlatformExperiment {
+    repeated string experimentally_supported_annotation_names = 1;
+    repeated string experimentally_supported_annotation_name_prefixes = 2;
+    optional bool enable_bloom_filters = 3;
+    optional bool enable_consistent_hashing = 4;
+}

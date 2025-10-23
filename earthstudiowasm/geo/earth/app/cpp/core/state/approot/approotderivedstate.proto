@@ -1,0 +1,68 @@
+syntax = "editions";
+
+package earth.state.derivedstate;
+
+import "devtools/staticanalysis/pipeline/analyzers/proto_best_practices/proto/optouts.proto";
+import "geo/earth/app/cpp/core/protos/view_group.proto";
+import "geo/earth/proto/contentcreation/content_editing_model.proto";
+import "geo/earth/proto/mapstyle.proto";
+
+option objc_class_prefix = "RTH";
+option java_multiple_files = true;
+option optimize_for = CODE_SIZE;
+option java_package = "com.google.geo.earth.app.common.presenters.stateurl.derivedstate";
+
+message AppRootDerivedState {
+    optional bool is_immersive_mode_active = 1 [default = false];
+    optional bool is_left_panel_collapsed = 2 [default = false];
+    optional bool can_left_panel_be_expanded_or_collapsed = 3 [default = true];
+    optional bool is_toolbar_visible = 4 [default = true];
+    optional bool is_menu_bar_visible = 5 [default = true];
+    optional bool are_nav_controls_visible = 6 [default = true];
+    optional bool is_compass_visible = 7 [default = true];
+    optional bool is_pegman_button_visible = 8 [default = true];
+    optional bool is_hover_button_visible = 9 [default = true];
+    optional bool is_mylocation_button_visible = 10 [default = true];
+    optional bool is_in_street_view_pano = 11 [default = false];
+    optional bool is_street_view_timeline_visible = 53 [default = false];
+    optional bool is_street_view_timeline_collapsed = 54 [default = false];
+    optional bool is_play_mode_active = 12 [default = false];
+    optional bool is_3d_editing_gizmo_visible = 13 [default = false];
+    optional bool is_lightbox_visible = 14 [default = false];
+    optional bool is_inspector_active = 15 [default = false];
+    optional bool is_collapsed_widgets_active = 17 [default = false];
+    optional bool is_search_open = 18 [default = false];
+    optional bool have_search_results = 19 [default = false];
+    optional bool is_measure_tool_active = 20 [default = false];
+    optional bool is_map_styles_active = 21 [default = false];
+    optional document.protos.BalloonStyle.DisplayMode balloon_display_mode = 24;
+    optional bool is_search_panel_suppressed_sui = 25 [default = false];
+    optional bool is_tour_player_visible = 26 [default = false];
+    optional bool is_timelapse_visible = 27 [default = false];
+    optional bool is_timelapse_expanded_pui = 28 [default = false];
+    optional bool is_timelapse_expanded_sui = 29 [default = false];
+    optional bool is_delve_active = 30 [default = false];
+    optional bool is_ui_faded_out = 31 [default = false];
+    optional .earth.core.viewgroup.ViewGroup view_group = 32;
+    optional bool is_design_generation_input_visible = 33 [default = false];
+    optional bool is_time_machine_visible = 34 [default = false];
+    optional bool is_time_machine_expanded_pui = 35 [default = false];
+    optional bool is_time_machine_expanded_sui = 36 [default = false];
+    optional bool is_navigation_controls_visible = 37 [default = false];
+    optional bool is_design_input_solar_visible = 38 [default = false];
+    optional bool is_design_input_new_build_visible = 39 [default = false];
+    optional bool is_design_input_mode_selection_visible = 40 [default = false];
+    optional bool is_coverage_overlay_active = 41 [default = false];
+    optional bool is_data_table_visible = 42 [default = false];
+    optional bool has_focused_document = 43 [default = false];
+    optional bool is_site_selection_active = 44 [default = false];
+    optional bool is_legend_visible = 45 [default = false];
+    optional bool is_menu_bar_collapsed = 46 [default = false];
+    optional bool is_site_study_active = 47 [default = false];
+    optional bool show_explore_tools_in_streamlined_ui = 49 [default = false];
+    optional bool is_property_editor_visible = 50 [default = false];
+    optional bool is_industry_selector_banner_visible = 51 [default = false];
+    optional bool is_industry_selector_survey_visible = 52 [default = false];
+    optional bool is_linestring_or_point_drawing_mode = 55 [default = false];
+    optional layers.MapStyle map_style = 56;
+}

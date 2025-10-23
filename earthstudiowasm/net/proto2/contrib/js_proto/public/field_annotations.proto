@@ -1,0 +1,15 @@
+syntax = "proto2";
+
+package proto2.js_proto;
+
+import "net/proto2/proto/descriptor.proto";
+
+extend FieldOptions {
+    optional bool skip_for_js_proto = 18178315;
+    optional bool use_number_in_js = 18426606;
+    optional bool lazy_parse = 18427003;
+}
+
+extend FileOptions {
+    optional bool alias_apps_jspb = 525000018 [default = true];
+}

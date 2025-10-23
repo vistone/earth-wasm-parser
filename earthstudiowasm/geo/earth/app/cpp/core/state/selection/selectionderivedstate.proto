@@ -1,0 +1,16 @@
+syntax = "editions";
+
+package earth.state.derivedstate;
+
+import "devtools/staticanalysis/pipeline/analyzers/proto_best_practices/proto/optouts.proto";
+import "geo/earth/app/cpp/core/state/state.proto";
+
+option java_multiple_files = true;
+option optimize_for = CODE_SIZE;
+option java_package = "com.google.geo.earth.app.common.state.derivedstate";
+
+message SelectionDerivedState {
+    optional int32 document_key = 3;
+    optional NonRestorableSelectionData.FeatureSelection selected_feature_keys = 1;
+    optional NonRestorableSelectionData.FeatureSelection sorted_selected_feature_keys = 2;
+}

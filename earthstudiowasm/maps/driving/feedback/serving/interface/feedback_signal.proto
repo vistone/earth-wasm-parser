@@ -1,0 +1,36 @@
+syntax = "proto2";
+
+package maps.driving.feedback.service;
+
+import "logs/proto/logs_annotations/logs_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_multiple_files = true;
+
+message PublishedSignalType {
+    optional PublishedSignalTypeId id = 1;
+    enum PublishedSignalTypeId {
+        UNKNOWN = 0;
+        TEST = 7;
+        HISTORICAL_ANDROID_AUTO_HBE_COUNT = 1 [deprecated = true];
+        HISTORICAL_ANDROID_AUTO_SEGMENT_TRAVERSAL_COUNT = 2 [deprecated = true];
+        ANDROID_AUTO_HBE_HOT_SPOT_INDICATOR = 5 [deprecated = true];
+        ANDROID_AUTO_HBE_PRIORITY_AND_HOT_SPOT = 6 [deprecated = true];
+        HBE_PROBABILITY_V0 = 9;
+        TRAFFIC_LIGHT_SEGMENT_LENGTH_M = 3 [deprecated = true];
+        CYCLING_NATURALISTIC_RERANK_COST = 4;
+        CYCLING_NATURALISTIC_RERANK_COST_WORLDWIDE = 10;
+        CYCLING_NATURALISTIC_RERANK_COST_V2 = 11;
+        TWEAK_ROUTES = 8 [deprecated = true];
+        TEST_PREDICTION = 12;
+    }
+}
+
+message FeedbackSignal {
+    optional PublishedSignalType signal_type = 1;
+    optional float value = 2;
+}
+
+message SegmentSignals {
+    repeated FeedbackSignal signals = 1;
+}

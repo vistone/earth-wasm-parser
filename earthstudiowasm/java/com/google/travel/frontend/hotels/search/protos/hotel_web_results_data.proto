@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package boq.travelfrontendhotelssearch.protos;
+
+import "java/com/google/apps/jspb/jspb.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.travel.frontend.hotels.search.protos";
+
+message HotelWebResultsDataRequest {
+    optional string query = 1;
+    optional int32 max_num_results = 2;
+    optional string encoded_entity_key = 3;
+}
+
+message HotelWebResultsDataResponse {
+    repeated WebResult web_result = 1;
+}
+
+message WebResult {
+    optional string title = 1;
+    optional string url = 2;
+    optional string snippet = 3;
+    optional HotelWebResultSource source = 4;
+    optional string favicon_base64_data = 7;
+    optional GenericResultData generic_result_data = 6;
+    optional InterestingFindData interesting_find_data = 5;
+}
+
+message GenericResultData {
+    repeated string url_breadcrumbs = 6;
+}
+
+message InterestingFindData {
+    optional string host_title = 1;
+    optional string favicon_base64_data = 2 [deprecated = true];
+    optional string thumbnail_url = 3;
+    optional int64 page_date_ms = 4;
+}
+
+enum HotelWebResultSource {
+    UNKNOWN = 0;
+    GENERIC_WEB_SEARCH = 1;
+    TOPIC_FEED = 2;
+}

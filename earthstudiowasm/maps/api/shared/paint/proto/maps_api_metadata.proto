@@ -1,0 +1,16 @@
+syntax = "editions";
+
+package maps_api;
+
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+
+option objc_class_prefix = "GMA";
+option java_multiple_files = true;
+
+message MapsApiMetadataProto {
+    repeated KeyValue properties = 1;
+    message KeyValue {
+        optional string key = 1;
+        optional string value = 2;
+    }
+}

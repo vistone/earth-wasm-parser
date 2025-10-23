@@ -1,0 +1,26 @@
+syntax = "editions";
+
+package geo_serving_proto.offerings.contribution;
+
+import "java/com/google/apps/jspb/jspb.proto";
+import "logs/proto/logs_annotations/logs_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GSPOFC";
+option java_multiple_files = true;
+option java_outer_classname = "ContributionProto";
+option java_package = "com.google.geo.serving.proto.offerings.contribution";
+
+enum ContributionOrigin {
+    UNKNOWN_OFFERING_ORIGIN = 0;
+    OFFERING_ANNOTATION_PHOTO_TAG = 1;
+    TODOLIST_TAG_PUBLISHED_PHOTOS_TASK = 8;
+    POI_WIZARD_TAG_PUBLISHED_PHOTOS_TASK = 10;
+    POI_WIZARD_NOTIFICATION_TAG_PUBLISHED_PHOTOS_TASK = 11;
+    OFFERING_EDITOR_NEW_OFFERING = 2;
+    OFFERING_DETAILS_RECOMMENDATION = 3;
+    OFFERING_REPORTED_PROBLEM = 4;
+    OFFERING_DETAILS_ADDED_NAME = 6;
+    OFFERING_DETAILS_ADDED_PHOTO = 7;
+    PORTKEY_EDITORIAL_CONTENT = 5;
+}

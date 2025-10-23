@@ -1,0 +1,18 @@
+syntax = "editions";
+
+package geo.earth.app;
+
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+import "wireless/android/privacy/annotations/proto/collection_basis_annotations.proto";
+
+option objc_class_prefix = "RTH";
+option java_outer_classname = "EarthFeedEventProto";
+option java_package = "com.google.geo.earth.app";
+
+message EarthFeedEvent {
+    optional string item_guid = 1;
+    optional string feature_id = 2;
+    optional uint32 item_index = 3;
+    optional string display_type = 4;
+    optional string link_href = 5;
+}

@@ -1,0 +1,118 @@
+syntax = "proto2";
+
+package maps_tactile.shared.offering;
+
+import "geo/serving/proto/offerings/contribution/contribution_origin.proto";
+import "geo/serving/proto/offerings/contribution/offering_name_submission_context.proto";
+import "geo/serving/proto/offerings/offering_type.proto";
+import "geo/serving/proto/photos/image_key.proto";
+import "logs/proto/logs_annotations/logs_annotations.proto";
+import "maps/tactile/api/shared/money.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GMTTSHO";
+option java_multiple_files = true;
+option java_outer_classname = "OfferingProto";
+option java_package = "com.google.maps.tactile.shared.offering";
+
+message UpdateMasks {
+    optional bool price = 1;
+    optional bool recommendation = 2;
+    optional bool description = 3;
+    optional bool visibility = 4;
+}
+
+message CreateUpdateContribution {
+    optional string name = 1;
+    optional geo_serving_proto.offerings.OfferingType type = 2;
+    optional geo_serving_proto.offerings.contribution.ContributionOrigin offering_origin = 7;
+    optional Money price = 3;
+    optional Recommendation recommendation = 4;
+    optional string description = 5;
+    repeated geo_serving_proto.photos.ImageKey image_key = 6 [deprecated = true];
+    repeated PhotoInfo photo_info = 11;
+    optional string offering_reference_canonical_id = 8;
+    optional ContributionVisibility visibility = 9;
+    optional geo_serving_proto.offerings.contribution.OfferingNameSubmissionContext offering_name_submission_context = 10;
+}
+
+message PhotoInfo {
+    optional string media_key = 1;
+    optional string ugcs_content_id = 2;
+}
+
+message CreateUpdateResult {
+    optional ResponseCode reply = 1;
+    optional string contribution_id = 2;
+    optional bytes photo_attachment_token = 3;
+    optional bytes offering_key = 4;
+}
+
+message OfferingContributionFeature {
+    optional geo_serving_proto.offerings.OfferingType offering_type = 1;
+    optional string merchant_edit_menu_url = 2;
+}
+
+message OfferingFeatures {
+    repeated OfferingContributionFeature offering_contribution_feature = 1;
+}
+
+message OfferingReportedAttributeProblem {
+    optional AttributeType attribute_type = 1;
+    enum AttributeType {
+        UNKNOWN_ATTRIBUTE_TYPE = 0;
+        NAME_ATTRIBUTE = 1;
+        PRICE_ATTRIBUTE = 2;
+        DESCRIPTION_ATTRIBUTE = 3;
+        VEGETARIAN_ATTRIBUTE = 4;
+        VEGAN_ATTRIBUTE = 5;
+    }
+    
+    optional AttributeValue reported_value = 2;
+    message AttributeValue {
+        oneof value {
+            bool bool_value = 1;
+            string string_value = 2;
+            int32 int32_value = 3;
+            double double_value = 4;
+        }
+    }
+    
+    optional AttributeValue proposed_value = 3;
+    optional geo_serving_proto.offerings.contribution.OfferingNameSubmissionContext offering_name_submission_context = 4;
+}
+
+message OfferingReportedProblemContext {
+    repeated geo_serving_proto.photos.ImageKey reference_image_key = 1;
+    optional string reference_title = 2;
+}
+
+enum Recommendation {
+    UNKNOWN_RECOMMENDATION = 0;
+    RECOMMEND = 1;
+    NOT_RECOMMEND = 2;
+}
+
+enum OfferingReportedProblemType {
+    UNKNOWN_OFFERING_REPORTED_PROBLEM_TYPE = 0;
+    NEVER_EXISTED = 1;
+    NO_LONGER_EXISTS = 2;
+    DUPLICATE = 3;
+    FACTUALLY_INCORRECT = 4;
+    INAPPROPRIATE_CONTENT = 5;
+}
+
+enum ContributionVisibility {
+    UNKNOWN_CONTRIBUTION_VISIBILITY = 0;
+    PRIVATE = 1;
+    PUBLIC = 2;
+}
+
+enum ResponseCode {
+    UNKNOWN_RESPONSE_CODE = 0;
+    SUCCESS = 1;
+    BACKEND_FAILURE = 2;
+    ALREADY_EXISTS = 3;
+    NOT_FOUND = 4;
+}

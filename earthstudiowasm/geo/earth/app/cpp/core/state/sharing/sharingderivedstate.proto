@@ -1,0 +1,22 @@
+syntax = "editions";
+
+package earth.state.derivedstate;
+
+import "devtools/staticanalysis/pipeline/analyzers/proto_best_practices/proto/optouts.proto";
+import "geo/earth/app/cpp/core/state/state.proto";
+
+option objc_class_prefix = "RTH";
+option java_multiple_files = true;
+option optimize_for = CODE_SIZE;
+option java_package = "com.google.geo.earth.app.common.presenters.stateurl.derived";
+
+message SharingDerivedState {
+    optional bool url_sharing_dialog_visible = 1;
+    optional NonRestorableSharingData.UrlType url_type = 2;
+    optional string context_text = 3;
+    optional bool sharing_policy_dialog_visible = 4;
+    optional bool document_sharing_dialog_visible = 5;
+    optional int32 shared_document_key = 6;
+    optional bool document_quick_sharing_dialog_visible = 7;
+    optional bool screenshot_sharing_dialog_visible = 8;
+}

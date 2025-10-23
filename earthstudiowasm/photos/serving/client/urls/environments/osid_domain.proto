@@ -1,0 +1,18 @@
+syntax = "editions";
+
+package photos.serving;
+
+option java_multiple_files = true;
+option java_package = "com.google.photos.serving.proto1api";
+
+message OsidDomain {
+    enum Type {
+        UNKNOWN_OSID_DOMAIN = 0;
+        NONE = 1;
+        PHOTOS = 2;
+        DRIVE = 3;
+        TEST = 4;
+        CONTRIBSERVICE_SHARED = 5;
+        DRIVE_GOOGLE_COM = 6;
+    }
+}

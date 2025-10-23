@@ -1,0 +1,19 @@
+syntax = "editions";
+
+package geo_serving_proto.userreactions;
+
+import "geo/serving/proto/attribution/user_attribution.proto";
+import "geo/serving/proto/userreactions/reaction_type.proto";
+import "java/com/google/apps/jspb/jspb.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GSPUR";
+option java_multiple_files = true;
+option java_outer_classname = "AttributedReactionProto";
+option java_package = "com.google.geo.serving.proto.userreactions";
+
+message AttributedReaction {
+    optional geo_serving_proto.attribution.UserAttribution user_attribution = 1;
+    optional ReactionType reaction_type = 2;
+}

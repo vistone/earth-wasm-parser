@@ -1,0 +1,101 @@
+syntax = "proto2";
+
+package maps.mrp;
+
+import "maps/directions/customization/config/serving_protos/cost_function_inputs.proto";
+import "maps/directions/customization/config/serving_protos/passability_properties.proto";
+import "maps/directions/mrp/proto/annotator_spec.proto";
+import "maps/directions/mrp/proto/money_vector.proto";
+import "maps/pathfinder/client/cost-model-options.proto";
+
+message QueryPropertiesProto {
+    optional QueryUserPropsProto user_properties = 1;
+    optional QueryClientPropsProto client_properties = 2;
+    optional QueryVehiclePropsProto vehicle_properties = 3;
+    optional QueryAreaPropsProto area_properties = 4;
+    optional QueryDestinationPropsProto destination_properties = 5;
+    optional QueryTimePropsProto time_properties = 6;
+}
+
+message QueryUserPropsProto {
+    optional string locale = 1;
+    optional string language = 2;
+    optional string country_code = 3;
+    repeated int32 experiment_ids = 4;
+}
+
+message QueryClientPropsProto {
+    optional string application_name = 1;
+}
+
+message QueryVehiclePropsProto {
+    
+}
+
+message QueryAreaPropsProto {
+    repeated string country_codes = 1;
+    repeated string metro_areas = 2;
+    repeated fixed64 covering_cell_ids = 3;
+}
+
+message QueryDestinationPropsProto {
+    repeated string poi_gcid = 1;
+}
+
+message QueryTimePropsProto {
+    optional int64 request_timestamp_ms = 1;
+    optional bool is_night = 3;
+    optional bool is_rush_hour = 4;
+    optional bool is_weekend = 5;
+    
+    oneof specified_timestamp_ms {
+        int64 departure_timestamp_ms = 2;
+        int64 arrival_timestamp_ms = 6;
+    }
+}
+
+message TripPropertiesProto {
+    repeated .pathfinder.CostModelOptions.TravelMode travel_modes = 1;
+    optional int64 travel_time_milliseconds = 2;
+    optional int64 relative_travel_time_milliseconds = 3;
+    optional int64 distance_millimeters = 4;
+    optional int64 relative_distance_millimeters = 5;
+    optional bool includes_tolls = 6;
+    optional MoneyVectorProto toll_price = 7;
+    optional MoneyVectorProto relative_toll_price = 8;
+    optional int64 assisted_driving_travel_time_milliseconds = 9;
+    optional int64 relative_assisted_driving_travel_time_milliseconds = 10;
+    optional bool includes_ferries = 12;
+    
+    repeated TaggedPenalty tagged_penalties = 11;
+    message TaggedPenalty {
+        optional AnnotatorSpecProto.Type source = 1;
+        optional string tag = 2;
+        optional double penalty_milliseconds = 3;
+        optional double penalty_before_multiplier_milliseconds = 4;
+    }
+    
+    repeated TripFeasibility trip_feasibility = 13;
+    message TripFeasibility {
+        optional bool is_infeasible = 1;
+        optional AnnotatorSpecProto.Type annotator_attribution = 2;
+        optional string tag = 3;
+    }
+    
+    optional maps_directions_customization.CostFunctionInputs customization_cost_function_inputs = 16;
+    optional maps_directions_customization.PassabilityProperties customization_passability_trip_properties = 17;
+    optional bool trigger_risk_averse_routing = 18;
+    optional bool includes_hov_only_segments = 19;
+    
+    reserved 14, 15;
+    
+    enum Property {
+        UNKNOWN_PROPERTY = 0;
+        TRAVEL_TIME = 1;
+        DISTANCE = 2;
+        INCLUDES_TOLLS = 3;
+        TOLL_COST = 4;
+        ASSISTED_DRIVING_TIME = 5;
+        INCLUDES_FERRIES = 6;
+    }
+}

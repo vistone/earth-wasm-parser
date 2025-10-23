@@ -1,0 +1,11 @@
+syntax = "editions";
+
+package geo.earth.proto;
+
+import "google/internal/earth/v1/client_config.proto";
+
+option objc_class_prefix = "RTH";
+
+message BootstrapClientConfig {
+    optional google.internal.earth.v1.config.ServiceConfig earth_service_config = 1;
+}

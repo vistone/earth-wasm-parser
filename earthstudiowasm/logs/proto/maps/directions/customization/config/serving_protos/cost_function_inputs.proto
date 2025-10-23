@@ -1,0 +1,9 @@
+syntax = "editions";
+
+package maps_directions_customization_logs_serving_protos;
+
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+message LoggedCostFunctionInputs {
+    map<string, double> properties = 1;
+}

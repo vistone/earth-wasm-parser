@@ -1,0 +1,13 @@
+syntax = "editions";
+
+package geo.casemap.search;
+
+import "geo/case/map/search/proto/pin_style.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.geo.casemap.search.proto";
+
+message StyleOptions {
+    optional PinStyle pin_style = 1;
+    optional bool make_icon_transparent = 2;
+}

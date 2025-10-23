@@ -1,0 +1,58 @@
+syntax = "proto2";
+
+package google.internal.earth.v1.dms;
+
+import "google/internal/earth/v1/shared.proto";
+import "net/proto2/contrib/validator/annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+import "wireless/android/privacy/annotations/proto/collection_basis_annotations.proto";
+
+option objc_class_prefix = "RTH";
+option java_multiple_files = true;
+option java_package = "com.google.internal.earth.v1.dms";
+
+message DmsFeatureDetailsRequest {
+    optional string feature_id = 1;
+    optional string parent_layer_id = 2;
+    optional ClientMetadata client_metadata = 3;
+}
+
+message DmsFeatureDetailsResponse {
+    map<string, FeatureAttributeValue> attribute = 4;
+    repeated ProcessedFeatureAttribute processed_attribute = 3;
+    
+    reserved 1, 2;
+}
+
+message ProcessedFeatureAttribute {
+    optional string name = 1;
+    optional string localized_name = 2;
+    optional string localized_value = 3;
+    
+    optional AttributeType type = 5;
+    enum AttributeType {
+        ATTR_TYPE_UNSPECIFIED = 0;
+        ATTR_TYPE_STRING = 1;
+        ATTR_TYPE_ENUM = 2;
+        ATTR_TYPE_NUMBER = 3;
+        ATTR_TYPE_DATETIME_USEC = 4;
+        ATTR_TYPE_BOOLEAN = 5;
+        ATTR_TYPE_LAT_LNG = 6;
+        ATTR_TYPE_DISTANCE_M = 7;
+        ATTR_TYPE_AREA_SQ_M = 8;
+        ATTR_TYPE_POWER_W = 9;
+        ATTR_TYPE_VOLTAGE_V = 10;
+        ATTR_TYPE_MARKDOWN = 11;
+        ATTR_TYPE_IMAGE = 12;
+    }
+}
+
+message FeatureAttributeValue {
+    oneof feature_attribute_value_type {
+        int64 integer_value = 1;
+        bool boolean_value = 2;
+        double double_value = 3;
+        string string_value = 4;
+        int64 date_time_usec_value = 5;
+    }
+}

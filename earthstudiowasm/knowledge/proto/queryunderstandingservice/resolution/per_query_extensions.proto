@@ -1,0 +1,15 @@
+syntax = "editions";
+
+package knowledge.proto;
+
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.knowledge.proto";
+
+message PerQueryDataAndSignals {
+    repeated int32 extension_ids = 1;
+    
+    extensions 900 to max;
+}

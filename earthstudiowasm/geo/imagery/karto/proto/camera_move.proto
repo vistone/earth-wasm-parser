@@ -1,0 +1,55 @@
+syntax = "editions";
+
+package geo.imagery.karto.proto;
+
+import "geo/imagery/karto/proto/frame.proto";
+import "geo/imagery/karto/proto/movie_actor_parameters.proto";
+import "geo/render/mirth/apps/mirthrender/batch/mapfacts_params.proto";
+import "geo/render/mirth/apps/mirthrender/batch/poi_animation_params.proto";
+
+option java_multiple_files = true;
+
+message AerialToPanoParameters {
+    optional string pano_id = 1;
+}
+
+message ERSParametersCameraMove {
+    optional mirth_apps_mirthrender.MapFactsParams map_facts_params = 1;
+    optional mirth_apps_mirthrender.PoiAnimationParams poi_animation_params = 2;
+}
+
+message PanoToAerialParameters {
+    optional string pano_id = 1;
+}
+
+message PanoLookAroundParameters {
+    optional string pano_id = 1;
+}
+
+message PrecomputedCameraPathCameraMove {
+    repeated Frame frames = 1;
+}
+
+message StreetLevelCameraPathCameraMove {
+    optional string selected_run_id = 1;
+    
+    optional PanoTimeRange time_range = 2;
+    message PanoTimeRange {
+        optional string start_timestamp = 1;
+        optional string end_timestamp = 2;
+    }
+    
+    repeated string ordered_pano_ids = 3;
+}
+
+message CameraMove {
+    oneof camera_move {
+        MovieActorParameters movie_actor_parameters = 1;
+        ERSParametersCameraMove ers_parameters = 2;
+        PrecomputedCameraPathCameraMove precomputed_camera_path = 3;
+        StreetLevelCameraPathCameraMove street_level_camera_path = 4;
+        AerialToPanoParameters aerial_to_pano = 6;
+        PanoToAerialParameters pano_to_aerial = 7;
+        PanoLookAroundParameters pano_path = 8;
+    }
+}

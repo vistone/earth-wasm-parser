@@ -1,0 +1,38 @@
+syntax = "editions";
+
+package geo_serving_proto.offerings.contribution;
+
+import "geo/serving/proto/offerings/contribution/contribution_name_entry_method.proto";
+import "java/com/google/apps/jspb/jspb.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GSPOFC";
+option java_multiple_files = true;
+option java_outer_classname = "OfferingNameSubmissionContextProto";
+option java_package = "com.google.geo.serving.proto.offerings.contribution";
+
+message OfferingNameSubmissionContext {
+    optional ContributionNameEntryMethod contribution_name_entry_method = 1;
+    optional string contribution_name_selected_canonical_offering_id = 2;
+    
+    optional CandidateOfferingNameContext candidate_offering_name_context = 3;
+    message CandidateOfferingNameContext {
+        repeated CandidateNameDetails displayed_candidate_name = 1;
+        message CandidateNameDetails {
+            oneof name_details {
+                CanonicalOfferingNameDetails canonical_offering_name_details = 1;
+                FoodnetLabelNameDetails foodnet_label_name_details = 2;
+            }
+            
+            message CanonicalOfferingNameDetails {
+                optional string canonical_id = 1;
+            }
+            
+            message FoodnetLabelNameDetails {
+                optional string mid = 1;
+            }
+        }
+        
+        optional int32 selected_candidate_name_index = 2;
+    }
+}

@@ -1,0 +1,52 @@
+syntax = "editions";
+
+package maps_versatile;
+
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+
+option objc_class_prefix = "GMV";
+option java_multiple_files = true;
+option java_package = "com.google.maps.versatile";
+
+message DataBoundValue {
+    optional DataBindingKey key = 1;
+    enum DataBindingKey {
+        DATA_BINDING_KEY_PHOTO_PIN_URL = 1;
+        DATA_BINDING_KEY_UNSPECIFIED = 0;
+        DATA_BINDING_KEY_TRANSIT_LINE_COLOR = 2;
+        DATA_BINDING_KEY_SECONDARY_TRANSIT_LINE_COLOR = 15;
+        DATA_BINDING_KEY_LOCATION_SHARING_AVATAR_URL = 3;
+        DATA_BINDING_KEY_LOCATION_SHARING_BADGE_CIRCLE_URL = 4;
+        DATA_BINDING_KEY_LOCATION_SHARING_BADGE_TEXT_URL = 5;
+        DATA_BINDING_KEY_ENLARGED_PHOTO_PIN_URL = 6 [deprecated = true];
+        DATA_BINDING_KEY_DRAPED_GEOMETRY_ERROR_METERS = 7;
+        DATA_BINDING_KEY_DRAPED_GEOMETRY_MIN_ERROR_METERS = 16;
+        DATA_BINDING_KEY_DRAPED_GEOMETRY_PHYSICAL_OFFSET_METERS = 17;
+        DATA_BINDING_KEY_PHOTO_PIN_URL_32X32_PX = 8;
+        DATA_BINDING_KEY_PHOTO_PIN_URL_42X42_PX = 9;
+        DATA_BINDING_KEY_PHOTO_PIN_URL_50X50_PX = 10;
+        DATA_BINDING_KEY_PHOTO_PIN_URL_52X52_PX = 11;
+        DATA_BINDING_KEY_AIR_QUALITY_PIN_COLOR = 12;
+        DATA_BINDING_KEY_TRANSIT_MAP_LINE_ICON_URL = 13;
+        DATA_BINDING_KEY_TRANSIT_MAP_SECONDARY_LINE_ICON_URL = 14;
+        DATA_BINDING_KEY_EMOJI_PIN_IMAGE_URL = 18;
+        DATA_BINDING_KEY_PROMOTED_PIN_LOGO_ICON_URL = 19;
+        DATA_BINDING_KEY_EMOJI_PIN_BACKGROUND_COLOR = 20;
+        DATA_BINDING_KEY_EMOJI_PIN_SECONDARY_BACKGROUND_COLOR = 21;
+    }
+    
+    oneof value {
+        bool bool_value = 2;
+        bytes bytes_value = 3 [ctype = CORD];
+        fixed32 fixed32_value = 4;
+        fixed64 fixed64_value = 5;
+        float float_value = 6;
+        int32 int32_value = 7;
+        int64 int64_value = 8;
+        sint32 sint32_value = 9;
+        sint64 sint64_value = 10;
+        string string_value = 11;
+        uint32 uint32_value = 12;
+        uint64 uint64_value = 13;
+    }
+}

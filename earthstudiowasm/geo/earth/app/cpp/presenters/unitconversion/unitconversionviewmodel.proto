@@ -1,0 +1,93 @@
+syntax = "proto2";
+
+package earth.unitconversion;
+
+import "devtools/staticanalysis/pipeline/analyzers/proto_best_practices/proto/optouts.proto";
+import "geo/earth/app/cpp/core/protos/unit_type.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_multiple_files = true;
+option optimize_for = CODE_SIZE;
+option java_package = "com.google.android.apps.earth.unitconversion";
+
+message Unit {
+    optional UnitName name = 1;
+    optional double conversion_factor = 2;
+    optional UnitSystem system = 4;
+    optional .earth.core.unittype.UnitType type = 5;
+}
+
+message AvailableUnits {
+    repeated Unit units = 1;
+}
+
+message AutoUnit {
+    optional UnitName small = 1;
+    optional UnitName large = 2;
+    optional double threshold_value = 3;
+}
+
+message DefaultUnits {
+    optional UnitName metric = 1;
+    optional UnitName imperial = 2;
+}
+
+message AutoUnits {
+    optional AutoUnit metric = 1;
+    optional AutoUnit imperial = 2;
+}
+
+message UnitGroup {
+    repeated UnitName unit_names = 1 [packed = true];
+}
+
+message UnitGroups {
+    repeated UnitGroup unit_groups = 1;
+}
+
+message UnitCategories {
+    map<string, UnitGroups> unit_groups = 1;
+    map<string, DefaultUnits> default_units = 2;
+    map<string, AutoUnits> auto_units = 3;
+}
+
+message UnitConversionViewModelState {
+    optional UnitName distance_unit_name = 1;
+    optional UnitName area_unit_name = 2;
+    optional UnitSystem unit_system = 3;
+    
+    oneof event {
+        AvailableUnits available_units_changed_event = 4;
+        UnitCategories unit_categories_changed_event = 5;
+    }
+}
+
+enum UnitSystem {
+    UNKNOWN_UNIT_SYSTEM = 0;
+    METRIC = 1;
+    IMPERIAL = 2;
+}
+
+enum UnitName {
+    UNKNOWN_UNIT_NAME = 0;
+    AUTO_UNIT = 1;
+    CENTIMETERS = 2;
+    METERS = 3;
+    KILOMETERS = 4;
+    INCHES = 5;
+    FEET = 6;
+    YARDS = 7;
+    MILES = 8;
+    NAUTICAL_MILES = 9;
+    SMOOTS = 10;
+    SQUARE_METERS = 11;
+    SQUARE_KILOMETERS = 12;
+    SQUARE_FEET = 13;
+    SQUARE_YARDS = 14;
+    SQUARE_MILES = 15;
+    SQUARE_NAUTICAL_MILES = 16;
+    HECTARES = 17;
+    ACRES = 18;
+    PERCENT = 19;
+    FAR = 20;
+}

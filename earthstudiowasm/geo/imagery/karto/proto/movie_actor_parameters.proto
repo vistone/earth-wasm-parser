@@ -1,0 +1,116 @@
+syntax = "editions";
+
+package geo.imagery.karto.proto;
+
+import "geo/ar/protos/pose.proto";
+import "geo/imagery/karto/proto/bounding_box.proto";
+
+option java_multiple_files = true;
+option java_outer_classname = "MovieActorParametersProto";
+option java_package = "com.google.geo.imagery.karto.proto";
+
+message MovieActorParameters {
+    optional bool adjust_for_visibility = 1 [default = true];
+    optional float orbit_duration_seconds = 2 [default = 30];
+    optional bool use_easing = 3 [default = false];
+    optional float ease_exponent = 4 [default = 2];
+    optional float heading_bias = 5 [default = 0];
+    optional float radius_multiplier = 6 [default = 1];
+    optional float fov_y = 7 [default = 60];
+    optional float initial_aperture = 8 [default = 0.1];
+    optional float initial_pitch = 9 [default = 15];
+    optional bool secondary_orbit = 10 [default = true];
+    optional bool orbit_loop = 11 [default = true];
+    optional float secondary_radius_multiplier = 12 [default = 1];
+    optional float secondary_fov_y = 13 [default = 60];
+    optional float secondary_aperture = 14 [default = 0.1];
+    optional float secondary_pitch = 15 [default = 25];
+    optional float lookat_altitude_fraction = 16 [default = 0.6];
+    optional float min_orbit_distance_meters = 31 [default = 70];
+    optional float max_orbit_distance_meters = 32 [default = 1200];
+    optional string debug_parameters = 18;
+    optional bool use_karto_bounds = 19 [default = true];
+    repeated string related_pins_place_ids_override = 26;
+    repeated string sub_poi_place_ids = 34;
+    optional float overview_ratio = 35 [default = 0.1];
+    
+    optional ScreenSpace target_orbit_screenspace = 22;
+    message ScreenSpace {
+        optional float top = 1;
+        optional float bottom = 2;
+        optional float left = 3;
+        optional float right = 4;
+    }
+    
+    optional bool view_bounding_box = 24 [default = false, deprecated = true];
+    
+    repeated CameraOverride camera_overrides = 25;
+    message CameraOverride {
+        optional AspectRatio aspect_ratio = 1;
+        optional OrbitParameter primary_orbit = 2;
+        optional OrbitParameter secondary_orbit = 3;
+    }
+    
+    optional OrbitType orbit_type = 27 [default = VPS_DUAL_ORBIT];
+    enum OrbitType {
+        UNKNOWN_TYPE = 0;
+        CIRCULAR_ORBIT = 1;
+        VPS_DUAL_ORBIT = 2;
+        STATIC_POSE = 3;
+        MULTI_ORBIT = 4;
+    }
+    
+    optional StaticPoseParameter static_pose = 29;
+    message StaticPoseParameter {
+        optional ar.LatLngAlt camera_position = 1;
+        optional ar.LatLngAlt orbit_origin = 2;
+    }
+    
+    optional StartupMode startup_mode = 28 [default = ORBIT];
+    enum StartupMode {
+        UNKNOWN_MODE = 0;
+        ORBIT = 1;
+        STREET_LEVEL = 2;
+        ROUTE_PREVIEW = 3;
+    }
+    
+    optional DualOrbitOptions dual_orbit_options = 33;
+    message DualOrbitOptions {
+        optional bool calculate_height_from_front_face_only = 1 [default = false];
+        
+        optional CollisionDetectionOptions collision_detection_options = 2;
+        message CollisionDetectionOptions {
+            optional float min_clearance_below_cm = 1 [default = 500];
+            optional float min_visibility_distance_when_far_cm = 2 [default = 1000];
+            optional float min_visibility_distance_when_near_cm = 3 [default = 5000];
+            optional float max_near_distance_to_orbit_center_cm = 4 [default = 15000];
+        }
+        
+        optional PositionCalculationOptions position_calculation_options = 3;
+        message PositionCalculationOptions {
+            optional float default_initial_pitch_deg = 1 [default = -10];
+            optional float default_initial_distance_m = 2 [default = 100];
+            optional float min_allowed_pitch_deg = 3 [default = -37];
+            optional float max_allowed_pitch_deg = 4 [default = 20];
+        }
+    }
+    
+    oneof box_override {
+        BoundingBoxOverride bounding_box_override = 23;
+        OrientedBoundingBox oriented_bounding_box_override = 30;
+    }
+    
+    reserved 17, 20, 21;
+    
+    message AspectRatio {
+        optional int32 numerator = 1;
+        optional int32 denominator = 2;
+    }
+    
+    message OrbitParameter {
+        optional float radius_m = 1;
+        optional float pitch = 2;
+        optional float aperture = 3 [default = 0.06];
+        optional float fov_y = 4 [default = 60];
+    }
+}

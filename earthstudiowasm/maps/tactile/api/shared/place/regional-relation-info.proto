@@ -1,0 +1,16 @@
+syntax = "proto2";
+
+package maps_tactile.shared.place;
+
+import "maps/tactile/api/shared/place/regional-relation.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GMTTSHPL";
+option java_multiple_files = true;
+option java_outer_classname = "RegionalRelationInfoProto";
+option java_package = "com.google.maps.tactile.shared.place";
+
+message RegionalRelationInfo {
+    repeated RegionalRelation relation = 1;
+}

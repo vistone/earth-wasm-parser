@@ -1,0 +1,77 @@
+syntax = "proto2";
+
+package quality.ranklab.codegen;
+
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_package = "com.google.protos.quality.ranklab.codegen.proto1api";
+
+message ProtoType {
+    optional string name = 1;
+    optional string proto = 8;
+    optional string py = 2;
+    optional string cc = 3;
+    optional string cc_native = 10;
+    repeated string cc_file = 4;
+    repeated string cc_dep = 9;
+    optional string java_pkg = 5;
+    optional string java_class = 6;
+    optional string java_api = 7;
+    repeated Path message_set_path = 11;
+}
+
+message SparseFeatureSpec {
+    optional string sentinel_value = 1;
+}
+
+message PathElement {
+    optional string field = 1;
+    optional string index = 2;
+    optional string message_set = 3;
+    optional string extension = 4;
+    optional string package_name = 9;
+    optional bool keep_proto = 5;
+    optional bool is_pointer = 6;
+    optional CustomAccessors custom_accessors = 7;
+    optional bool should_never_export = 8;
+}
+
+message CustomAccessors {
+    optional string haser = 1;
+    optional string getter = 2;
+    optional string mutable = 3;
+    optional string setter = 4;
+}
+
+message Path {
+    optional string alias = 1;
+    repeated PathElement element = 2;
+    repeated GenMode gen_mode = 3;
+    optional SparseFeatureSpec sparse = 4;
+}
+
+message Wildcard {
+    optional string alias_match_re = 1 [default = ".*"];
+    repeated PathElement search_in = 2;
+    repeated PathElement search_in_map = 5;
+    repeated PathElement name_field = 3;
+    repeated PathElement value_field = 4;
+}
+
+message Paths {
+    repeated ProtoType type_def = 1;
+    optional string root_proto = 2;
+    repeated Path path = 3;
+    
+    repeated FieldNameToAlias auto_alias = 4;
+    message FieldNameToAlias {
+        repeated PathElement element = 1;
+    }
+    
+    repeated Wildcard wildcard = 5;
+}
+
+enum GenMode {
+    OUTPUT = 0;
+    NO_INPUT = 1;
+}

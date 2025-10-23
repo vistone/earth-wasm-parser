@@ -1,0 +1,30 @@
+syntax = "editions";
+
+package geo_photo_service;
+
+import "geo/photo/venus/proto/media_migration_key_options.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GPS";
+option java_multiple_files = true;
+option java_outer_classname = "ExperimentalProto";
+option java_package = "com.google.geo.photo.proto1api";
+
+message ExperimentalOptions {
+    optional bool use_google_plus_attribution = 2 [deprecated = true];
+    optional bool provide_fife_id_for_legacy_ugc_pano = 3 [default = false];
+    optional bool include_attribution_contribution_summary = 4 [deprecated = true];
+    optional bool enable_contribservice_thumbnails = 5 [deprecated = true];
+    optional bool enable_contribservice_video_streams = 6 [deprecated = true];
+    optional geo_photo_venus.MediaMigrationPrimaryKeyOption return_primary_key_option = 7;
+    optional bool enable_cs_serving = 8;
+    optional bool use_cs_secure_fife_stale_reads = 10;
+    optional bool force_cs_non_stale = 12;
+    optional bool force_pb_secure_fife = 9;
+    optional bool force_pb_guessable_fife = 11;
+    optional bool force_cs_guessable_fife = 13;
+}
+
+message Experimental {
+    optional string fife_photosphere_id = 2;
+}

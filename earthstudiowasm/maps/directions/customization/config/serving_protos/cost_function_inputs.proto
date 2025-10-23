@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package maps_directions_customization;
+
+import "quality/ranklab/codegen/protopath/protopath_gen.proto";
+
+message CostFunctionInputs {
+    map<string, double> properties = 1;
+}

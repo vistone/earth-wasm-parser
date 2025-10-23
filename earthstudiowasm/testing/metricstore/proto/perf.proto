@@ -1,0 +1,160 @@
+syntax = "editions";
+
+package sponge_perf;
+
+option objc_class_prefix = "SPP";
+option java_generic_services = true;
+option java_package = "com.google.testing.metricstore.proto";
+
+message EmptyMessage {
+    
+}
+
+message ConfigurationValue {
+    optional string name = 1;
+    optional string value = 2;
+}
+
+message RpcErrorCode {
+    enum Code {
+        NO_ERROR = 0;
+        CLIENT_ERROR = 400;
+        SERVER_ERROR = 500;
+    }
+}
+
+message PerformanceDataQuery {
+    optional int64 start_date = 1;
+    optional int64 end_date = 2;
+    optional int32 offset = 3;
+    optional int32 maxResults = 4;
+    optional string benchmark = 5;
+    optional string experiment = 6;
+    optional string cl = 7;
+    repeated ConfigurationValue configurationValue = 8;
+    repeated string metricName = 9;
+    optional string data_source = 10;
+    optional string start_cl = 11;
+    optional string end_cl = 12;
+    optional bool include_samples = 13 [default = true];
+}
+
+message PerformanceDataList {
+    repeated PerformanceData performanceData = 1;
+}
+
+message StringList {
+    repeated string string = 1;
+}
+
+message Percentile {
+    optional int32 percentage = 1;
+    optional double value = 2;
+}
+
+message Aggregation {
+    optional CalculationSource calculation_source = 1;
+    enum CalculationSource {
+        SPONGE_V1 = 0;
+        EXTERNAL = 1;
+    }
+    
+    optional int32 count = 2;
+    optional double min = 3;
+    optional double max = 4;
+    optional double mean = 5;
+    optional double standard_deviation = 6;
+    optional int32 error_count = 7;
+    repeated Percentile percentile = 8;
+}
+
+message SampleMetadata {
+    optional string name = 1;
+    optional string value = 2;
+}
+
+message Sample {
+    optional double value = 1;
+    optional int64 timestamp_in_millis = 2;
+    
+    optional Outcome outcome = 3;
+    enum Outcome {
+        SUCCESSFUL_OUTCOME = 0;
+        FAILED_OUTCOME = 1;
+    }
+    
+    repeated SampleMetadata metadata = 4;
+}
+
+message MetricMetadata {
+    optional string name = 1;
+    optional string value = 2;
+}
+
+message Metric {
+    optional string name = 1;
+    repeated Sample sample = 2;
+    optional Aggregation aggregation = 3;
+    optional bool time_series = 4;
+    optional string unit = 5;
+    optional string machine_name = 6;
+    optional string borgmon_expression = 7;
+    repeated MetricMetadata metadata = 8;
+}
+
+message PerformanceData {
+    optional string id = 1;
+    optional int64 timestamp_in_millis = 2;
+    optional string benchmark = 3;
+    optional string experiment = 4;
+    optional string cl = 5;
+    optional int32 thread_count = 6;
+    repeated Metric metric = 7;
+    repeated ConfigurationValue config = 8;
+    optional string description = 9;
+    optional string data_source = 10;
+    optional string user = 11;
+    optional string project_name = 12;
+    optional int32 project_id = 13;
+    
+    optional AggregatorStrategy aggregator_strategy = 14 [default = V1];
+    enum AggregatorStrategy {
+        NONE = 0;
+        V1 = 1;
+        V1_NO_DOWNSAMPLE = 2;
+    }
+}
+
+message SavePerformanceDataResponse {
+    optional string id = 1;
+}
+
+message AddSamplesToPerformanceMetricRequest {
+    optional string id = 1;
+    optional string metric_name = 2;
+    repeated Sample sample = 3;
+    optional string machine_name = 4;
+    optional Aggregation aggregation = 5;
+}
+
+message AddSamplesToPerformanceMetricResponse {
+    
+}
+
+message AddMetricsToPerformanceDataRequest {
+    optional string id = 1;
+    repeated Metric metric = 2;
+}
+
+message AddMetricsToPerformanceDataResponse {
+    
+}
+
+message SinglePerformanceDataRequest {
+    optional string id = 1;
+    optional bool include_samples = 2 [default = true];
+}
+
+message SinglePerformanceDataResponse {
+    optional PerformanceData performanceData = 1;
+}

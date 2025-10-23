@@ -1,0 +1,22 @@
+syntax = "editions";
+
+package geo_serving_proto.offerings.contribution;
+
+import "java/com/google/apps/jspb/jspb.proto";
+import "logs/proto/logs_annotations/logs_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GSPOFC";
+option java_multiple_files = true;
+option java_outer_classname = "ContributionNameEntryMethodProto";
+option java_package = "com.google.geo.serving.proto.offerings.contribution";
+
+enum ContributionNameEntryMethod {
+    UNKNOWN_CONTRIBUTION_NAME_ENTRY_METHOD = 0;
+    MANUAL_ENTRY = 1;
+    SERVER_SUGGESTION = 2;
+    MANUAL_ENTRY_WITH_MENU = 3;
+    SERVER_SUGGESTION_CANONICAL_OFFERING = 4;
+    SERVER_SUGGESTION_CANDIDATE_NAME_CONFIRMATION = 5;
+    SERVER_SUGGESTION_CANDIDATE_NAME = 6;
+}

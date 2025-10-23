@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package logs.proto.maps.directions.copilot;
+
+import "maps/directions/copilot/traffic_report/traffic_report_icon.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+message LoggedTrafficReport {
+    optional LoggedOneLiner one_liner = 14;
+}
+
+message LoggedOneLiner {
+    repeated LoggedTrafficReportPiece title = 1;
+    repeated LoggedTrafficReportPiece short_title = 2;
+    repeated LoggedTrafficReportPiece subtitle = 4;
+    optional maps_directions.copilot.TrafficReportIcon icon = 3;
+}
+
+message LoggedTrafficReportPiece {
+    optional string text = 3;
+}

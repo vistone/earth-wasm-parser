@@ -1,0 +1,206 @@
+syntax = "proto2";
+
+package maps.mrp;
+
+import "geostore/base/proto/featureid.proto";
+import "geostore/base/proto/point.proto";
+import "logs/proto/logs_annotations/logs_annotations.proto";
+import "maps/directions/mrp/proto/money_vector.proto";
+import "maps/directions/mrp/proto/properties.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+
+message CostFunctionSpecProto {
+    optional Type type = 1;
+    enum Type {
+        UNKNOWN_COST_FUNCTION_TYPE = 0;
+        TIME = 1;
+        DISTANCE = 2;
+        TIME_DISTANCE = 3;
+        RATE_CARD_PLUS_TOLL = 4;
+        ASSISTED_DRIVING = 6;
+        GOES_NEAR = 7;
+        REQUERY_SIMILARITY = 8;
+        AVOID_TOLLS = 9;
+        RELATIVE = 10;
+        ROUTE_CHANGE = 11;
+        AVOID_HIGHWAYS = 12;
+        FAKE = 13;
+        TIME_FUEL = 15;
+        DYNAMIC_CLOSURES = 17;
+        AVOID_FERRIES = 18;
+        FALLBACK = 23;
+        CUSTOMIZATION_CONFIG = 27;
+        RISK_AVERSE = 28;
+    }
+    
+    repeated TripPropertiesProto.Property relevant_properties = 2;
+    optional string label = 3;
+    repeated CostFunctionSpecProto sub_specs = 4;
+    
+    oneof details {
+        TimeParametersProto time_parameters = 5;
+        DistanceParametersProto distance_parameters = 6;
+        TimeDistanceParametersProto time_distance_parameters = 7;
+        RateCardPlusTollParametersProto rate_card_plus_toll_parameters = 8;
+        AssistedDrivingParametersProto assisted_driving_parameters = 10;
+        GoesNearParametersProto goes_near_parameters = 11;
+        RequerySimilarityParametersProto requery_similarity_parameters = 13;
+        AvoidTollsParametersProto avoid_tolls_parameters = 12;
+        RelativeParametersProto relative_parameters = 16;
+        RouteChangeParametersProto route_change_parameters = 14;
+        AvoidHighwaysParametersProto avoid_highways_parameters = 15;
+        FakeCostParametersProto fake_cost_parameters = 17;
+        TimeFuelParametersProto fuel_parameters = 19;
+        DynamicClosuresParametersProto dynamic_closures_parameters = 21;
+        AvoidFerriesParametersProto avoid_ferries_parameters = 22;
+        FallbackParametersProto fallback_parameters = 23;
+        CustomizationConfigParametersProto customization_config_parameters = 27;
+    }
+    
+    reserved 9, 18, 20, 24, 25, 26, 28, 29;
+}
+
+message TimeParametersProto {
+    optional double raw_penalty_weight = 1;
+}
+
+message DistanceParametersProto {
+    optional double raw_penalty_speed_km_per_hr = 1;
+}
+
+message TimeDistanceParametersProto {
+    optional double hrs_per_km = 1;
+    optional double raw_penalty_weight = 2;
+}
+
+message RateCardProto {
+    optional MoneyVectorProto cost_per_min = 1;
+    optional MoneyVectorProto cost_per_km = 2;
+}
+
+message RateCardPlusTollParametersProto {
+    optional RateCardProto rate_card = 1;
+    optional MoneyVectorProto toll_weight = 2;
+    optional MoneyVectorProto overall_weight = 3;
+    optional double raw_penalty_weight = 4;
+    optional double raw_penalty_speed_km_per_hr = 5;
+}
+
+message AssistedDrivingParametersProto {
+    optional double discount_percent = 1;
+    optional double raw_penalty_weight = 2;
+}
+
+message GoesNearParametersProto {
+    repeated Target targets = 1;
+    message Target {
+        optional geostore.PointProto lat_lng = 1;
+        optional double max_visited_distance_km = 2;
+        optional double min_avoided_distance_km = 3;
+        optional double reward = 4;
+        optional double penalty_per_km = 5;
+    }
+}
+
+message RequerySimilarityParametersProto {
+    optional double similarity_weight = 1;
+}
+
+message AvoidTollsParametersProto {
+    optional double multiplicative_toll_penalty = 1;
+}
+
+message RelativeParametersProto {
+    optional double max_cost_difference = 1;
+}
+
+message RouteChangeParametersProto {
+    optional double route_change_penalty = 1;
+}
+
+message AvoidHighwaysParametersProto {
+    optional double full_route_cost_multiplier_for_routes_with_any_highway = 1;
+    optional double highway_travel_time_multiplier = 2;
+}
+
+message DynamicClosuresParametersProto {
+    repeated geostore.FeatureIdProto feature_id = 1;
+    optional double full_route_cost_multiplier_for_routes_with_any_dynamic_closures = 2;
+    optional double dynamic_closures_travel_time_multiplier = 3;
+}
+
+message AvoidFerriesParametersProto {
+    optional double multiplicative_ferries_penalty = 1;
+}
+
+message TimeFuelParametersProto {
+    optional double fuel_weight_secs_per_ml = 2;
+    optional double fuel_penalty_abs_cap_seconds = 3;
+    optional double fuel_penalty_rel_cap_percent = 4;
+    optional double fuel_penalty_long_trip_cap_seconds = 8;
+    
+    optional SubType sub_type = 5 [default = NUDGE];
+    enum SubType {
+        UNKNOWN_TIME_FUEL_SUB_TYPE = 0;
+        NUDGE = 1;
+    }
+    
+    optional bool use_best_cost_trip_as_fuel_ref = 6;
+    
+    optional ExternalityType externality_type = 7 [default = NO_EXPERIMENT];
+    enum ExternalityType {
+        NO_EXPERIMENT = 0;
+        MEASUREMENT_EXPERIMENT = 1;
+    }
+    
+    reserved 1;
+}
+
+message FakeCostParametersProto {
+    optional double fake_trip_cost = 1;
+}
+
+message FallbackParametersProto {
+    
+}
+
+message CostProto {
+    optional int32 trip_index = 1;
+    optional int32 selector_index = 2;
+    optional string label = 3;
+    repeated CostProto sub_costs = 4;
+    optional double cost = 5;
+    optional int32 rank = 6;
+    
+    optional CostingStatus costing_status = 7;
+    enum CostingStatus {
+        UNKNOWN_COSTING_STATUS = 0;
+        SUCCESS = 1;
+        MISSING_OPTIONAL_ANNOTATIONS = 2;
+    }
+    
+    optional int32 fallback_sub_cost_index = 8;
+}
+
+message SelectorSpecProto {
+    optional CostFunctionSpecProto cost_function_spec = 1;
+    optional int32 max_to_select = 2;
+    optional double better_route_cost_tolerance = 3;
+    optional double reroute_similarity_weight = 4;
+    optional double reroute_max_cost_difference = 8;
+    optional double max_similarity_cost_factor = 5;
+    optional double max_cost_factor = 6;
+    optional bool is_optional = 7;
+    optional double relative_selector_weight = 9;
+    optional double decay_rate = 10;
+}
+
+message SelectedTripInfoProto {
+    optional CostProto cost = 1;
+    optional string label = 2;
+    optional double relevance = 3;
+}
+
+message CustomizationConfigParametersProto {
+    optional string qualified_name = 1;
+}

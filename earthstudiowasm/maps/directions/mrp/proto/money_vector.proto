@@ -1,0 +1,9 @@
+syntax = "proto2";
+
+package maps.mrp;
+
+import "google/type/money.proto";
+
+message MoneyVectorProto {
+    repeated google.type.Money money = 1;
+}

@@ -1,0 +1,78 @@
+syntax = "proto2";
+
+package earth.legend;
+
+import "devtools/staticanalysis/pipeline/analyzers/proto_best_practices/proto/optouts.proto";
+import "geo/earth/proto/contentcreation/content_editing_model.proto";
+
+option objc_class_prefix = "RTH";
+option java_multiple_files = true;
+option java_package = "com.google.android.apps.earth.legend";
+
+message Item {
+    optional string localized_name = 1;
+    optional document.protos.Color color = 2;
+    
+    optional Icon icon = 3;
+    enum Icon {
+        ICON_UNDEFINED = 0;
+        ICON_LOCATION_ON = 1;
+    }
+    
+    oneof numeric_value {
+        int64 int_value = 4;
+        double double_value = 5;
+    }
+}
+
+message Categorical {
+    repeated Item items = 1;
+}
+
+message Choropleth {
+    optional Item left_bound = 1;
+    optional Item right_bound = 2;
+    optional int32 stops = 3;
+}
+
+message LegendLayer {
+    optional Id id = 1;
+    enum Id {
+        UNDEFINED = 0;
+        NEW_BUILD_BY_BUILDING_USE_TYPE = 1;
+        NEW_BUILD_BY_APARTMENT_TYPE = 2;
+        SOLAR = 3;
+        NEW_BUILD_SOLAR_ENERGY_POTENTIAL = 4;
+        NEW_BUILD_GROUND_SUNLIGHT_HOURS = 5;
+        NEW_BUILD_VIEWS = 6;
+    }
+    
+    optional string localized_name = 2;
+    optional string description = 3;
+    optional string learn_more_url = 4;
+    
+    optional FormatConfig format_config = 7;
+    message FormatConfig {
+        optional string currency_code = 1;
+    }
+    
+    oneof layer_type {
+        Categorical categorical = 5;
+        Choropleth choropleth = 6;
+    }
+}
+
+message LegendSection {
+    optional Id id = 1;
+    enum Id {
+        UNDEFINED = 0;
+        BUILDING_DESIGN = 1;
+    }
+    
+    optional string localized_name = 2;
+    repeated LegendLayer layers = 3;
+}
+
+message Legend {
+    repeated LegendSection sections = 1;
+}

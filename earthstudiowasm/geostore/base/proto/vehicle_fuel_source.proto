@@ -1,0 +1,18 @@
+syntax = "editions";
+
+package geostore;
+
+import "google/api/inclusion.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.geostore.base.proto";
+
+enum VehicleFuelSource {
+    FUEL_SOURCE_UNSPECIFIED = 0;
+    GAS = 1;
+    DIESEL = 2;
+    ELECTRIC = 3;
+    HYDROGEN = 4;
+    HYBRID = 5;
+    PLUGIN_HYBRID = 6;
+}

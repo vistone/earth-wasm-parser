@@ -1,0 +1,46 @@
+syntax = "proto2";
+
+package geostore;
+
+import "geostore/base/proto/datetime.proto";
+import "geostore/base/proto/featureid.proto";
+import "geostore/base/proto/options.proto";
+import "geostore/base/proto/segment_portion.proto";
+import "geostore/base/proto/timeschedule.proto";
+import "google/api/inclusion.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GS";
+option java_multiple_files = true;
+option java_package = "com.google.geostore.base.proto";
+
+message RoadDisruptionProto {
+    optional CauseProto cause = 1;
+    message CauseProto {
+        oneof cause_id {
+            FeatureIdProto road_disruption_id = 1;
+            string event_mid = 4;
+        }
+    }
+    
+    optional TimeScheduleProto planned_schedule = 2;
+    
+    optional TimestampedStateProto current_state = 3;
+    message TimestampedStateProto {
+        optional State state = 1;
+        enum State {
+            STATE_UNSPECIFIED = 0;
+            INACTIVE = 1;
+            SUSPECTED_ACTIVE = 2;
+            ACTIVE = 3;
+            AS_SCHEDULED = 4;
+        }
+        
+        optional DateTimeProto utc_datetime = 2;
+    }
+    
+    optional TimestampedStateProto future_state = 4;
+    optional DateTimeProto last_active_start_datetime = 5;
+    optional DateTimeProto last_inactive_start_datetime = 6;
+    repeated SegmentPortionProto affected_segment_portions = 7;
+}

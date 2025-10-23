@@ -1,0 +1,304 @@
+syntax = "proto2";
+
+package maps.mrp;
+
+import "geostore/base/proto/segment.proto";
+import "google/protobuf/timestamp.proto";
+import "maps/directions/customization/annotations/client/annotation_data_platform_experiments.proto";
+import "maps/directions/customization/config/annotation_api_config.proto";
+import "maps/directions/mrp/proto/money_vector.proto";
+import "maps/directions/rdp/proto/decoration_planner_input.proto";
+import "maps/directions/tolls/proto/client_id.proto";
+import "maps/directions/tolls/proto/pricing_factors.proto";
+import "maps/driving/sustainability/proto/vehicle_type.proto";
+import "maps/ev/proto/vehicle_energy_model.proto";
+import "maps/pathfinder/autonomous/proto/assisted_driving_info.proto";
+import "maps/pathfinder/client/cost-model-options.proto";
+import "maps/pathfinder/client/experiments.proto";
+import "maps/pathfinder/client/find-path-input.proto";
+import "maps/pathfinder/compliance/proto/compliance_prediction_server.proto";
+import "maps/pathfinder/server/describer/describer-options.proto";
+import "maps/roadtraffic/proto/incidentreport_v2_params.proto";
+import "maps/roadtraffic/proto/path_traffic_flavor.proto";
+import "maps/roadtraffic/proto/travel_mode.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+import "util/task/codes.proto";
+
+message AnnotatorSpecProto {
+    optional Type type = 1;
+    enum Type {
+        UNKNOWN_ANNOTATOR_TYPE = 0;
+        LAT_LNGS = 1;
+        DISPLAY_DISTANCE = 40;
+        ALTITUDES = 2;
+        STATIC_TRAVEL_TIME = 3;
+        DEPRECATED_ROAD_TRAFFIC_TRAVEL_TIME = 4 [deprecated = true];
+        TRAFFIC_AWARE_TRAVEL_TIME = 23;
+        DESCRIPTION = 5;
+        INCIDENTS = 6;
+        TRAFFIC_REPORT = 7;
+        ELECTRIC_VEHICLE = 8;
+        SEGMENT_PROPERTIES = 9;
+        TOLL_COST = 10;
+        ASSISTED_DRIVING = 11;
+        MOST_ACCURATE_TRAVEL_TIME = 12;
+        FAKE_TOLL_COST = 13;
+        FAKE_ASSISTED_DRIVING = 14;
+        MANEUVERS = 16;
+        RELEVANT_RESTRICTIONS = 17;
+        ACTIVE_RESTRICTIONS = 18;
+        SEARCH_PROPERTIES = 19;
+        FAKE_DESCRIPTION = 20;
+        COMPLIANCE = 21;
+        TEST_VALUE = 22;
+        REQUERY = 24;
+        MODE_AVAILABILITY = 25;
+        OFFLINE_TEST = 26;
+        FUEL_CONSUMPTION = 27;
+        RESTRICTED_ZONES = 28;
+        FAKE_REQUERY = 30;
+        TRAVEL_TIME_EXTERNALITY = 34;
+        CUSTOMIZATION_CONFIG_SEGMENT_PROPERTIES = 35;
+        GUIDANCE = 38;
+        RISK_AVERSE_TRIGGER = 37;
+        ROUTE_DECORATION = 39;
+    }
+    
+    optional Importance importance = 11;
+    enum Importance {
+        UNKNOWN_IMPORTANCE = 0;
+        REQUIRED = 1;
+        OPTIONAL = 2;
+    }
+    
+    optional string label = 2;
+    optional int64 deadline_milliseconds = 27;
+    optional bool dynamic_route_around_traffic = 29;
+    
+    oneof details {
+        RoadTrafficParametersProto road_traffic_parameters = 3;
+        DescriptionParametersProto description_parameters = 4;
+        ElectricVehicleAnnotatorParametersProto electric_vehicle_parameters = 5;
+        TollCostAnnotatorParametersProto toll_cost_parameters = 6;
+        FakeTollCostAnnotatorParametersProto fake_toll_cost_parameters = 7;
+        FakeAssistedDrivingAnnotatorParametersProto fake_assisted_driving_parameters = 8;
+        AssistedDrivingAnnotatorParametersProto assisted_driving_parameters = 9;
+        ComplianceParametersProto compliance_parameters = 10;
+        TestValueAnnotatorParametersProto test_value_parameters = 12;
+        TrafficReportParametersProto traffic_report_parameters = 13;
+        RequeryParametersProto requery_parameters = 14;
+        ModeAvailabilityParametersProto mode_availability_parameters = 15;
+        OfflineTestParametersProto offline_test_parameters = 26;
+        FuelConsumptionParametersProto fuel_consumption_parameters = 30;
+        RestrictedZonesParametersProto restricted_zones_parameters = 31;
+        TravelTimeExternalityParametersProto travel_time_externality_parameters = 33;
+        LatLngsAnnotatorParametersProto lat_lngs_parameters = 35;
+        StaticTravelTimeAnnotatorParametersProto static_travel_time_parameters = 36;
+        CustomizationConfigSegmentPropertiesParametersProto customization_config_segment_properties_parameters = 37;
+        MostAccurateTravelTimeAnnotatorParametersProto most_accurate_travel_time_parameters = 38;
+        GuidanceAnnotatorParametersProto guidance_parameters = 42;
+        ActiveRestrictionAnnotatorParametersProto active_restriction_parameters = 40;
+        RiskAverseTriggerAnnotatorParametersProto risk_averse_trigger_parameters = 41;
+        RouteDecorationAnnotatorParametersProto route_decoration_parameters = 43;
+        DisplayDistanceAnnotatorParametersProto display_distance_parameters = 44;
+    }
+    
+    reserved 28, 32, 39;
+}
+
+message RoadTrafficParametersProto {
+    repeated maps_roadtraffic.PathTrafficFlavor flavors = 1;
+    optional maps_roadtraffic.AnnotateIncidentsParameters incidents_parameters = 2;
+    repeated int32 input_flavor_index = 3 [packed = true];
+    optional bool include_roadtraffic_route_token = 4;
+    optional maps_roadtraffic.TravelMode travel_mode = 6 [default = TRAVEL_MODE_UNSPECIFIED];
+    optional bool use_long_tds_rpc_deadline = 10;
+    optional .pathfinder.ExperimentalParameters experimental_parameters = 12;
+    optional bool populate_traffic_for_decorations = 13;
+    optional bool return_road_routability_disruptions = 14;
+    
+    reserved 5, 7, 8, 9, 11;
+}
+
+message DescriptionParametersProto {
+    optional .pathfinder.FindPathInput original_request = 6;
+    optional uint64 rpc_hash = 7;
+    optional bool allow_empty_summaries = 8;
+    optional .pathfinder.DescriberOptionsProto describer_options = 9;
+    optional bool populate_core_display_segment_length = 10;
+    optional bool fetch_step_based_segment_ids = 11;
+}
+
+message RequeryParametersProto {
+    optional .pathfinder.FindPathInput original_request = 6;
+}
+
+message ElectricVehicleAnnotatorParametersProto {
+    optional maps_ev.VehicleEnergyModel energy_service_vehicle_energy_model = 1;
+    repeated int32 battery_percentile = 2;
+    optional bool want_ves_path_info = 3;
+    optional bool allow_ml_based_forecasts = 4;
+    optional float macroscopic_kinetic_energy_minimum_speed_difference_threshold_meters_per_second = 5;
+    optional bool allow_weather_based_forecasts = 6;
+}
+
+message TollCostAnnotatorParametersProto {
+    optional maps_tolls.PricingFactors pricing_factors = 1;
+    optional maps_tolls.ClientId originator = 2;
+    optional .pathfinder.CostModelOptions.TravelMode travel_mode = 3;
+    optional bool debug_tolls = 4;
+}
+
+message FakeTollCostAnnotatorParametersProto {
+    optional MoneyVectorProto cost_per_km = 1;
+    optional MoneyVectorProto cost_per_toll_point = 2;
+}
+
+message FakeAssistedDrivingAnnotatorParametersProto {
+    optional geostore.SegmentProto.Priority min_supported_priority = 1;
+}
+
+message AssistedDrivingAnnotatorParametersProto {
+    optional maps_autonomous.AssistedDrivingInfo assisted_driving_info = 1;
+}
+
+message ComplianceParametersProto {
+    optional maps_driving_compliance.ComplianceOptions compliance_options = 1;
+}
+
+message TestValueAnnotatorParametersProto {
+    optional string label = 1;
+    repeated string dependency_labels = 2;
+    optional util.error.Code result = 3;
+    optional int64 latency_milliseconds = 4;
+}
+
+message TrafficReportParametersProto {
+    optional .pathfinder.FindPathInput original_request = 6;
+    optional bool use_long_traffic_report_deadline = 7;
+    optional bool is_dependent_on_radp = 8;
+    optional bool annotate_unpaved_roads = 9;
+    optional bool annotate_crash_prone_spots = 10;
+    
+    reserved 1, 2, 3, 4, 5;
+}
+
+message ModeAvailabilityParametersProto {
+    optional .pathfinder.FindPathInput original_request = 1;
+}
+
+message OfflineTestParametersProto {
+    optional string table_name = 1;
+    optional uint64 data_version = 2;
+}
+
+message FuelConsumptionParametersProto {
+    optional ModelType model_type = 1;
+    enum ModelType {
+        NONE = 0;
+        GLASSBOX = 3;
+    }
+    
+    optional maps_driving.sustainability.VehicleType vehicle_type = 2;
+    optional string starting_country = 3;
+    optional bool want_fuel_consumption_decorations = 4;
+    optional bool enable_fleet_adjustments = 5;
+    optional .pathfinder.CostModelOptions.TravelMode travel_mode = 6;
+    optional bool populate_core_fuel_consumption = 7;
+    optional string customization_annotation_name = 8;
+    optional bool use_global_launch_model = 10;
+    
+    reserved 9;
+}
+
+message TravelTimeExternalityParametersProto {
+    optional ModelType model_type = 1;
+    enum ModelType {
+        NONE = 0;
+        CONSTANT_PENALTY_FOR_SET_OF_SEGMENTS = 1;
+    }
+}
+
+message LatLngsAnnotatorParametersProto {
+    optional bool populate_core_segment_length = 1;
+    optional bool populate_core_segment_length_for_decorations = 2;
+}
+
+message StaticTravelTimeAnnotatorParametersProto {
+    reserved 1;
+}
+
+message RestrictedZonesParametersProto {
+    optional bool is_internal = 1;
+    optional maps_driving.sustainability.VehicleType.EngineType engine_type = 2;
+}
+
+message CustomizationConfigSegmentPropertiesParametersProto {
+    repeated Annotation annotations = 1;
+    message Annotation {
+        optional string qualified_name = 1;
+        optional maps_directions_customization.SegmentPropertyApiConfig segment_property_api_config = 2;
+    }
+    
+    optional maps_directions_customization.AnnotationDataPlatformExperiment annotation_data_platform_experiment = 2;
+}
+
+message MostAccurateTravelTimeAnnotatorParametersProto {
+    optional string customization_annotation_name = 1;
+    optional bool populate_core_segment_duration = 2;
+    optional bool use_traffic_speeds = 3;
+    optional bool use_static_speeds = 4;
+    optional string decoration_annotation_name = 5;
+    optional .pathfinder.CostModelOptions.TravelMode request_travel_mode = 6;
+}
+
+message GuidanceAnnotatorParametersProto {
+    optional .pathfinder.FindPathInput original_request = 1;
+    optional string locale_language = 2 [default = "en"];
+    optional .pathfinder.DescriberOptionsProto describer_options = 3;
+}
+
+message ActiveRestrictionAnnotatorParametersProto {
+    optional bool allow_hov_restrictions = 1;
+    optional bool enable_penalizing_routes_through_active_disruption_closures = 2;
+}
+
+message RiskAverseTriggerAnnotatorAreaProto {
+    repeated int64 s2_cell_ids = 1 [packed = true];
+    optional google.protobuf.Timestamp expiration_timestamp = 2;
+    optional google.protobuf.Timestamp start_timestamp = 3;
+}
+
+message RiskAverseTriggerAnnotatorParametersProto {
+    optional bool force_trigger = 1;
+    repeated RiskAverseTriggerAnnotatorAreaProto risk_averse_trigger_area = 2;
+}
+
+message RouteDecorationAnnotatorParametersProto {
+    optional bool needs_decoration = 3;
+    optional bool clear_output_segment_ids = 4;
+    optional bool needs_static_segment_level_duration_info = 5;
+    optional maps_rdp.DecorationPlannerInput decoration_planner_input = 6;
+    repeated AnnotatorSpecProto.Type annotator_dependencies = 2 [packed = true];
+    
+    reserved 1;
+}
+
+message DisplayDistanceAnnotatorParametersProto {
+    optional .pathfinder.CostModelOptions.TravelMode travel_mode = 1;
+}
+
+message AnnotatorTreeSpecProto {
+    optional Type type = 1;
+    enum Type {
+        UNKNOWN_ANNOTATOR_TREE_SPEC_TYPE = 0;
+        PRIMITIVE = 1;
+        SERIES = 2;
+        PARALLEL = 3;
+    }
+    
+    optional AnnotatorSpecProto annotator_spec = 2;
+    repeated AnnotatorTreeSpecProto sub_specs = 3;
+    optional string name = 4;
+}

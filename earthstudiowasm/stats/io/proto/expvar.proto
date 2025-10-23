@@ -1,0 +1,13 @@
+syntax = "editions";
+
+option java_package = "com.google.common.stats.proto";
+
+message EV_KeyValuePair {
+    optional string name = 1;
+    optional string value = 2;
+    optional string docstring = 3;
+}
+
+message EV_KeyValueList {
+    repeated EV_KeyValuePair pair = 1;
+}

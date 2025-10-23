@@ -1,0 +1,39 @@
+syntax = "proto2";
+
+package geo.earth.proto.earth_mate;
+
+import "geo/earth/proto/commands.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.geo.earth.proto";
+
+message EarthMateResponseWrapper {
+    oneof response_type {
+        EarthMateQueryResponse query_response = 1;
+        EarthMateAreaDescriptionResponse area_description_response = 2;
+    }
+}
+
+message QueryExecutionMetadata {
+    optional bool response_feature_limit_reached = 1;
+    optional bool is_passthrough_response = 2;
+}
+
+message EarthMateQueryResponse {
+    repeated Command commands = 1;
+    optional string response_string = 2;
+    optional uint32 chat_session_id = 3;
+    optional string serialized_chat_context = 4;
+    optional QueryExecutionMetadata query_execution_metadata = 5;
+}
+
+message EarthMateRateResponse {
+    
+}
+
+message EarthMateAreaDescriptionResponse {
+    optional string response_string = 1;
+    repeated string suggested_followup_queries = 2;
+    optional string expanded_response_string = 3;
+}

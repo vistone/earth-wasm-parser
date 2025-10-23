@@ -1,0 +1,33 @@
+syntax = "editions";
+
+package maps_tactile.shared.directions;
+
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+import "third_party/java/protobuf/java_features.proto";
+import "third_party/protobuf/cpp_features.proto";
+
+option objc_class_prefix = "GMTTSHD";
+option java_multiple_files = true;
+option java_outer_classname = "ProblemTypeProto";
+option java_package = "com.google.maps.tactile.shared.directions";
+
+enum ProblemType {
+    UNKNOWN_PROBLEM_TYPE = 0;
+    ROAD_CLOSURE = 1;
+    LANE_CLOSURE = 2;
+    SUSPECTED_ROAD_CLOSURE = 3;
+    CRASH = 4;
+    CONSTRUCTION = 5;
+    JAM = 6;
+    SUSPECTED_JAM = 7;
+    STALLED_VEHICLE = 8;
+    OBJECT_ON_ROAD = 9;
+    SPEED_TRAP = 10;
+    POLICE_PRESENCE = 11;
+    MOBILE_SPEED_CAMERA = 12;
+    SPEED_CAMERA = 13;
+    SNOW = 14;
+    FOG = 15;
+    FLOOD = 16;
+    CRASH_PRONE_SPOT = 17;
+}

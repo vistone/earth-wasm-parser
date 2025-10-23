@@ -1,0 +1,16 @@
+syntax = "editions";
+
+package earth.state.derivedstate;
+
+import "devtools/staticanalysis/pipeline/analyzers/proto_best_practices/proto/optouts.proto";
+
+option objc_class_prefix = "RTH";
+option java_multiple_files = true;
+option optimize_for = CODE_SIZE;
+option java_package = "com.google.geo.earth.app.common.presenters.stateurl.derivedstate";
+
+message DocumentDerivedState {
+    optional int32 document_key = 1;
+    optional bool all_documents_hidden = 2;
+    optional bool is_reload_inhibited_if_document_is_focused = 3;
+}

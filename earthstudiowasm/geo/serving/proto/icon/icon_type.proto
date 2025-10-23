@@ -1,0 +1,30 @@
+syntax = "proto2";
+
+package geo_serving_proto.icon;
+
+import "java/com/google/apps/jspb/jspb.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GSPI";
+option java_multiple_files = true;
+option java_outer_classname = "IconTypeProto";
+option java_package = "com.google.geo.serving.proto.icon";
+
+enum IconType {
+    UNKNOWN_ICON_TYPE = 0;
+    CHECK = 5;
+    DEPLOYED_CODE = 2;
+    EVENT = 6;
+    GOOGLE_LENS_2 = 1;
+    HOW_TO_VOTE = 7;
+    INFO = 8;
+    LOCATION_CITY = 9;
+    MORE_HORIZONTAL = 4;
+    MORE_VERTICAL = 3;
+    OPEN_IN_NEW = 15;
+    PRIORITY_HIGH = 10;
+    PUBLIC = 11;
+    SCHEDULE = 12;
+    WARNING = 13;
+    WHERE_TO_VOTE = 14;
+}

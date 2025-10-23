@@ -1,0 +1,13 @@
+syntax = "editions";
+
+package maps_rdp;
+
+import "maps/directions/customization/annotations/client/annotation_data_platform_experiments.proto";
+import "maps/directions/rdp/proto/decoration_params.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+
+message DecorationPlannerInput {
+    repeated string decoration_customization_ids = 1;
+    optional maps_directions_customization.AnnotationDataPlatformExperiment annotation_data_platform_experiment = 2;
+    optional DecorationParams decoration_params = 3;
+}

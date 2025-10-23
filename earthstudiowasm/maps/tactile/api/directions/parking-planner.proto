@@ -1,0 +1,21 @@
+syntax = "proto2";
+
+package maps_tactile.directions;
+
+import "maps/tactile/api/shared/parking.proto";
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GMTTD";
+option java_multiple_files = true;
+option java_outer_classname = "ParkingPlannerProto";
+option java_package = "com.google.maps.tactile.directions";
+
+message ParkingPlanner {
+    optional bool nearby_parking_available = 5 [deprecated = true];
+    optional maps_tactile.shared.Parking parking = 2 [deprecated = true];
+    optional bool offer_end_of_route_assistance = 3 [deprecated = true];
+    optional bool show_dedicated_parking_prominently = 4 [deprecated = true];
+    
+    reserved 1, 6;
+}

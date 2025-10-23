@@ -1,0 +1,15 @@
+syntax = "editions";
+
+package logs.proto.maps.directions.mrp;
+
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+message LoggedMoney {
+    optional string currency_code = 1;
+    optional int64 units = 2;
+    optional int32 nanos = 3;
+}
+
+message LoggedMoneyVector {
+    repeated LoggedMoney money = 1;
+}

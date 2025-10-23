@@ -1,0 +1,58 @@
+syntax = "proto2";
+
+package google.internal.earth.v1.layers;
+
+import "google/internal/earth/v1/shared.proto";
+import "net/proto2/contrib/validator/annotations.proto";
+import "wireless/android/privacy/annotations/proto/collection_basis_annotations.proto";
+
+option objc_class_prefix = "RTH";
+option java_multiple_files = true;
+option java_package = "com.google.internal.earth.v1.layers";
+
+message ListDataLayersRequestWrapper {
+    optional ClientMetadata client_metadata = 1;
+    optional ListDataLayersRequest request = 2;
+}
+
+message ListDataLayersRequest {
+    optional int32 page_size = 2;
+    optional string page_token = 3;
+}
+
+message ListDataLayersResponse {
+    repeated LayerGroup layer_groups = 2;
+    
+    reserved 1;
+}
+
+message LayerGroup {
+    optional string group_title = 1;
+    repeated DataLayer layers = 5;
+    optional string next_page_token = 3;
+    optional string layer_group_id = 4;
+    
+    reserved 2;
+}
+
+message GetDataLayerRequestWrapper {
+    optional ClientMetadata client_metadata = 1;
+    optional GetDataLayerRequest request = 2;
+}
+
+message GetDataLayerRequest {
+    optional string id = 2;
+    
+    oneof layer_options {
+        DmsLayerOptions dms_layer_options = 3;
+    }
+}
+
+message DmsLayerOptions {
+    map<string, FilterSet> filters_by_key = 1;
+    repeated string exposed_attribute_keys = 2;
+}
+
+message GetDataLayerResponse {
+    optional DataLayer data_layer = 1;
+}

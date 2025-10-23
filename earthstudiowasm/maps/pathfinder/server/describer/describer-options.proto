@@ -1,0 +1,36 @@
+syntax = "editions";
+
+package pathfinder;
+
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option java_multiple_files = true;
+option java_package = "com.google.maps.pathfinder.client";
+
+message DescriberOptionsProto {
+    optional bool enable_traffic_lights_in_voice_guidance = 1;
+    optional bool enable_stop_sign_guidance = 18;
+    optional bool use_voice_guidance_module = 2 [default = false];
+    optional string query_locale_language = 3 [default = "en"];
+    optional bool enable_railroad_crossing_guidance = 5;
+    optional bool use_text_guidance_module = 6 [default = false];
+    optional bool use_step_cue_module = 7 [default = false];
+    optional bool enable_no_cardinal_direction_in_depart_step = 10;
+    optional bool enable_single_display_name_in_step = 11;
+    optional bool enable_overpass_voice_guidance = 12;
+    optional bool enable_natural_guidance_remove_continue_success = 13 [default = false];
+    optional bool enable_immediate_guidance = 14;
+    optional bool enable_destination_name_in_arrival = 15;
+    optional bool enable_natural_guidance_prepare_act_concat = 16 [default = false];
+    optional bool enable_natural_guidance_exit_parking_lot_in_depart = 17;
+    optional bool use_data_translators_for_guidance = 19;
+    optional bool enable_lane_change_based_lane_scoring = 20;
+    optional bool enable_relative_references_voice_guidance = 21;
+    optional bool enable_remove_final_prepare_destination_home = 23;
+    optional bool enable_into_parking_lot = 22;
+    optional bool enable_friendly_street_names = 24;
+    optional bool enable_flyover_guidance = 25;
+    optional bool enable_roundabout_directional_guidance = 26;
+    
+    reserved 4, 8, 9;
+}

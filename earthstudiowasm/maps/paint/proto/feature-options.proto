@@ -1,0 +1,21 @@
+syntax = "editions";
+
+package maps_paint;
+
+import "net/proto2/contrib/js_proto/public/field_annotations.proto";
+import "storage/datapol/annotations/proto/semantic_annotations.proto";
+
+option objc_class_prefix = "GMP";
+option java_package = "com.google.maps.paint";
+
+message FeatureOptions {
+    repeated MapFeature enabled_features = 1;
+    enum MapFeature {
+        FEATURE_UNKNOWN = 0;
+        FEATURE_TINIES = 1;
+        FEATURE_FLATTEN_BUILDINGS = 2;
+        FEATURE_ICONIC_ICONS = 3;
+        FEATURE_ATOMIC_BASEMAP = 5;
+        FEATURE_SHOW_HIDDEN_ATOMIC_LANES = 8;
+    }
+}
