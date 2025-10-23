@@ -1,0 +1,379 @@
+{
+  "totalFiles": 487,
+  "totalMessages": 1886,
+  "totalNamespaces": 139,
+  "topNamespaces": [
+    {
+      "namespace": "geostore",
+      "files": 150,
+      "messages": 292,
+      "enums": 111
+    },
+    {
+      "namespace": "earth.document.protos",
+      "files": 4,
+      "messages": 221,
+      "enums": 35
+    },
+    {
+      "namespace": "google.internal.earth.v1.builtenv",
+      "files": 20,
+      "messages": 151,
+      "enums": 26
+    },
+    {
+      "namespace": "maps_paint",
+      "files": 21,
+      "messages": 87,
+      "enums": 52
+    },
+    {
+      "namespace": "earth.state",
+      "files": 1,
+      "messages": 74,
+      "enums": 12
+    },
+    {
+      "namespace": "earth.featureupdater",
+      "files": 1,
+      "messages": 58,
+      "enums": 6
+    },
+    {
+      "namespace": "geo.earth.app",
+      "files": 9,
+      "messages": 56,
+      "enums": 36
+    },
+    {
+      "namespace": "maps_tactile.directions",
+      "files": 1,
+      "messages": 51,
+      "enums": 25
+    },
+    {
+      "namespace": "google.internal.earth.v1",
+      "files": 1,
+      "messages": 46,
+      "enums": 7
+    },
+    {
+      "namespace": "logs_proto_searchbox",
+      "files": 1,
+      "messages": 45,
+      "enums": 20
+    },
+    {
+      "namespace": "maps_tactile",
+      "files": 17,
+      "messages": 42,
+      "enums": 26
+    },
+    {
+      "namespace": "geo.earth.proto",
+      "files": 1,
+      "messages": 39,
+      "enums": 7
+    },
+    {
+      "namespace": "proto2",
+      "files": 1,
+      "messages": 36,
+      "enums": 25
+    },
+    {
+      "namespace": "google.api",
+      "files": 10,
+      "messages": 33,
+      "enums": 6
+    },
+    {
+      "namespace": "geo_serving_proto.electricvehicle",
+      "files": 4,
+      "messages": 31,
+      "enums": 5
+    },
+    {
+      "namespace": "google.internal.earth.v1.config",
+      "files": 1,
+      "messages": 31,
+      "enums": 1
+    },
+    {
+      "namespace": "earth.designdetails",
+      "files": 1,
+      "messages": 30,
+      "enums": 3
+    },
+    {
+      "namespace": "maps_spotlight",
+      "files": 6,
+      "messages": 29,
+      "enums": 13
+    },
+    {
+      "namespace": "google.internal.earth.v1.layers",
+      "files": 1,
+      "messages": 27,
+      "enums": 4
+    },
+    {
+      "namespace": "maps_tactile.shared",
+      "files": 12,
+      "messages": 27,
+      "enums": 20
+    }
+  ],
+  "sampleMessages": [
+    {
+      "name": "Selector",
+      "namespace": "devtools.protoshop.external",
+      "file": "parsing_options.proto"
+    },
+    {
+      "name": "ParsingOptions",
+      "namespace": "devtools.protoshop.external",
+      "file": "parsing_options.proto"
+    },
+    {
+      "name": "AnnotationOptions",
+      "namespace": "devtools.protoshop.external",
+      "file": "parsing_options.proto"
+    },
+    {
+      "name": "ParsingOptionsCollection",
+      "namespace": "devtools.protoshop.external",
+      "file": "parsing_options.proto"
+    },
+    {
+      "name": "ParsingResultsMetadata",
+      "namespace": "devtools.protoshop.external",
+      "file": "parsing_options.proto"
+    },
+    {
+      "name": "Category",
+      "namespace": "proto_best_practices",
+      "file": "optouts.proto"
+    },
+    {
+      "name": "FindingOptouts",
+      "namespace": "proto_best_practices",
+      "file": "optouts.proto"
+    },
+    {
+      "name": "ExperimentIds",
+      "namespace": "experiments.heterodyne",
+      "file": "experiment_ids.proto"
+    },
+    {
+      "name": "RpcreplayFieldOptions",
+      "namespace": "rpcreplay",
+      "file": "rpc_replay_field_option.proto"
+    },
+    {
+      "name": "ArrValidationFieldOption",
+      "namespace": "rpcreplay",
+      "file": "rpc_replay_field_option.proto"
+    },
+    {
+      "name": "ArrFieldOverrideOption",
+      "namespace": "rpcreplay",
+      "file": "rpc_replay_field_option.proto"
+    },
+    {
+      "name": "SetRegexToValue",
+      "namespace": "rpcreplay",
+      "file": "rpc_replay_field_option.proto"
+    },
+    {
+      "name": "AuthInfoRequest",
+      "namespace": "earth.account",
+      "file": "authinfo.proto"
+    },
+    {
+      "name": "AuthInfoResponse",
+      "namespace": "earth.account",
+      "file": "authinfo.proto"
+    },
+    {
+      "name": "PlatformAccountInfo",
+      "namespace": "earth.account",
+      "file": "authinfo.proto"
+    },
+    {
+      "name": "UserAccountInfo",
+      "namespace": "earth.account",
+      "file": "authinfo.proto"
+    },
+    {
+      "name": "CameraState",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "LegacyDataState",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "PanoId",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "FeatureData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "EarthFeedData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "KnowledgeCardData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "OysterId",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "SearchData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "TimeMachineData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "TimelapseData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "BasemapStyleData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "LatLonBox",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DriveData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DriveAction",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DriveCreateAction",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DriveOpenAction",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DriveOpenActionPlayModeDetail",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "SessionData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "HomescreenData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DesignData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DocumentData",
+      "namespace": "earth.deeplink",
+      "file": "legacydatastate.proto"
+    },
+    {
+      "name": "DocumentMetadata",
+      "namespace": "earth.document",
+      "file": "documentmetadata.proto"
+    },
+    {
+      "name": "RequestQueueState",
+      "namespace": "earth.document",
+      "file": "documentmetadata.proto"
+    },
+    {
+      "name": "DocumentMetadataList",
+      "namespace": "earth.document",
+      "file": "documentmetadata.proto"
+    },
+    {
+      "name": "DocumentUmsMetadata",
+      "namespace": "earth.document",
+      "file": "documentstoragemetadata.proto"
+    },
+    {
+      "name": "DocumentStorageMetadata",
+      "namespace": "earth.document",
+      "file": "documentstoragemetadata.proto"
+    },
+    {
+      "name": "FeatureKey",
+      "namespace": "earth.document.proto",
+      "file": "featurekey.proto"
+    },
+    {
+      "name": "UmsAdapterCapabilities",
+      "namespace": "earth.document",
+      "file": "ums_adapter_capabilities.proto"
+    },
+    {
+      "name": "ExperimentFlags",
+      "namespace": "earth.experiments",
+      "file": "experiment_flags.proto"
+    },
+    {
+      "name": "ExperimentIds",
+      "namespace": "earth.experiments",
+      "file": "experiment_flags.proto"
+    },
+    {
+      "name": "BuildingTemplateFarRangeInfo",
+      "namespace": "earth.buildingtemplates",
+      "file": "building_templates.proto"
+    },
+    {
+      "name": "BuildingTemplateInfo",
+      "namespace": "earth.buildingtemplates",
+      "file": "building_templates.proto"
+    },
+    {
+      "name": "DownloadDesignFileRequest",
+      "namespace": "earth.design",
+      "file": "design_actions.proto"
+    },
+    {
+      "name": "DownloadDesignFileResponse",
+      "namespace": "earth.design",
+      "file": "design_actions.proto"
+    }
+  ]
+}

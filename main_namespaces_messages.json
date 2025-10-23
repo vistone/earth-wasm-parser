@@ -1,0 +1,5218 @@
+{
+  "earth.document.protos": [
+    {
+      "name": "Document",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DocumentMetadata",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DocumentProperties",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DocumentSchema",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DocumentContents",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LocalVisibilityOverride",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LocalOpenedOverride",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureProperties",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Feature",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Placemark",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LatLng",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LookAtCamera",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LookAtCameraOptions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PlaceInfo",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureRestrictions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureExportRestrictions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeaturePropertiesExportRestrictions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureEditRestrictions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Geometry",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Point",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Polyline",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Polygon",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "StyleType",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ContentStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ContentStyleOptions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "IndividualStyleRule",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "IndividualStyleOptions",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "IndividualStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PointStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Icon",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "StockIcon",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "StockIconTextOverlay",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CustomIcon",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "IconData",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PixelOffset",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PolylineStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PolygonStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "BalloonStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "BalloonHtmlContent",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "BalloonTemplate",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "BalloonTemplateParameter",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LabelStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ListItemStyle",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ListItemIconStates",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "StyleUrlList",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Color",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Attribute",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AttributeValue",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Column",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ColumnSpec",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MediaMutationId",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MediaDisplayResource",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Media",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GroundOverlay",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MapTilePyramid",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Container",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "NetworkLink",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RasterTileLayer",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "EarthDataLayer",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "EarthDataLayerProperties",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "EarthDataLayerAttributeFilters",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CategoricalFilterSet",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CategoricalFilter",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RangeFilterSet",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RangeFilter",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DoubleRangeFilter",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "IntRangeFilter",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "EarthDataLayerGeometricFilter",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "EarthDataLayerAttributeStyles",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ColorPalette",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CategoricalStyleRuleSet",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CategoricalStyleRule",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ColorRamp",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InterpolatedStyleRuleSet",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CustomIntervals",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CustomIntervalInput",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PaintFeLayer",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LatLngRect",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LatLngQuad",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreationInfo",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "OwnerProfile",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Orientation",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Scale",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "BoundingBox",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ThreeDAsset",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Model",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "TrackSet",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Track",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ScreenOverlay",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PhotoOverlay",
+      "file": "content_editing_model.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DataMutationSet",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DataMutation",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MetadataMutationSet",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MetadataMutation",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AddFeature",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DeleteFeature",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UpdateFeatureProperties",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "SetStyle",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AddColumn",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RemoveColumn",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UpdateColumn",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AddFeatureMedia",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DeleteFeatureMedia",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "SetFeatureParent",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "SetFeatureIndex",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UpdateDocumentProperties",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UpdateDocumentMetadata",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UpdateStyleOptions",
+      "file": "content_editing_mutations.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ErrorWrapper",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MessageSet",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Item",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreateMapRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreateMapResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RequestOptions",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RecordingOptions",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MediaDisplayResourcePlaceholders",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetMapDataRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetMapDataResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AuthorizationInfo",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AuthorizationInfoMetadata",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AccessInfo",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MutateMapRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MutateMapResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DeleteMapRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DeleteMapResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RequestAccessRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "RequestAccessResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CopyMapRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CopyMapResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LastModifiedTimeFilter",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PersonFilter",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MapListItemFilterOptions",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetUserMapListRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetUserMapListResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MapListItem",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetImageDataRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetImageDataResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "HostedImage",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreateHostedAssetRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreateHostedAssetResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreateHostedImageRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreateHostedImageResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetUserRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "SetMapAccessControlRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "SetMapAccessControlResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetMapAccessControlRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetMapAccessControlResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreatePreparedDatasetRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CreatePreparedDatasetResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PreparedDataset",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PreviewDatasetRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PreviewDatasetResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ImportDatasetRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ImportDatasetResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MutationTimestamps",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureIdToFeatureStyleMap",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ValidateDocumentAssetUploadRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ValidateDocumentAssetUploadResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ImportDatasetAsyncRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ImportDatasetAsyncResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetMapMutationSetAtTimestampRequest",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "GetMapMutationSetAtTimestampResponse",
+      "file": "content_editing_requests.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DataImportErrorStatus",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureError",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ErrorLocation",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Schema",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "SharedStyle",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LocalStyle",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Document",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "Feature",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureExtractionFailed",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CannotBeParsed",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FileTooLarge",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "TooManyGeometryErrors",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "TooManyFeatures",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "TooManyGeometryVertices",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "TooManyGeocodingErrors",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MapReachedFeatureLimit",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ExtractedFeaturesExceedMapFeatureLimit",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FileSizeOverDriveExportLimit",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FeatureErrorList",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UnsupportedElement",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MissingSchemaId",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MissingAttributeFieldName",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MissingAttributeFieldType",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidAttributeFieldType",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "DuplicateAttributeFieldName",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidTimestamp",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidTimestampCamera",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidTimestampLookAt",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MissingCorrespondingSchema",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "MissingAttributeName",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AttributeNotFound",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CannotConvertToBoolean",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CannotConvertToDouble",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CannotConvertToInteger",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidAttributeType",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CoordinateMissingLatitude",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "CoordinateMissingLongitude",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LineMustHaveTwoUniqueCoordinates",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LinearRingMustHaveThreeUniqueCoordinates",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "LinearRingFirstAndLastCoordinatesMustBeEqual",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "PolygonMustHaveOuterBoundary",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "AddressFailedGeocoding",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidLongitude",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidLatitude",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "StyleCycleDetected",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "StyleDoesNotExist",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "BalloonStyleInvalidDisplayMode",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "HotspotInvalidXunit",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "HotspotInvalidYunit",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UnfetchedExternalStyle",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UnsupportedImageFormat",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InvalidBase64EncodedPng",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ImageDoesNotExist",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FailedToFetchExternalImage",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "FailedToSanitizeAndResizeImage",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "InternalImageError",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "ReachedMaxImageFetchLimit",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UnsupportedNonExternalBalloonImage",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UnsupportedNonExternalFeatureDescriptionImage",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    },
+    {
+      "name": "UnsupportedNonExternalSnippetImage",
+      "file": "data_import_errors.proto",
+      "namespace": "earth.document.protos"
+    }
+  ],
+  "earth.state": [
+    {
+      "name": "AppRootDerivedState",
+      "file": "approotderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "BalloonDerivedState",
+      "file": "balloonderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "ToolbarButtonVisibility",
+      "file": "balloonderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "VoyagerState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "KnowledgeCardState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "SearchState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "TimeMachineState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "TimelapseState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "BasemapStyleState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "StreetViewState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "DocumentViewState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "PlayModeState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "HomescreenState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "DesignState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "DeepLinkDerivedState",
+      "file": "deeplinkderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "LatLonBox",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "State",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "DataState",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableAppRootData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDocumentViewData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDeleteDocumentDialogData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDrawingToolData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorablePlayModeData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableMeasureToolData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableKnowledgeCardData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "StackRootCardId",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "OysterId",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDroppedPinData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableFeelingLuckyData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableBalloonData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "FeatureBalloonData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "HtmlBalloonData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableSearchData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableStreetViewData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "PanoId",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableTourData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableNotificationData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorablePropertyEditorData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableLightboxData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableUserErrorsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableOnDocumentLoadedOperation",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "FocusDocument",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "StartPlayMode",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "OpenEditor",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableOnStyleLoadedOperation",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "ShowInfoForFeature",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableTimeMachineData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableTimelapseData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableLayerFeatureRequestData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableCelestialData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableSharingData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableMapStyleData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableOperationProgressData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDocumentPickerData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableSettingsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "LayerFeatureDetailsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "LayerFeatureAttribute",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableSprayPaintData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableSelectionData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "FeatureSelection",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableExperimentsSettingsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableFeedbackData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableCreateLinkDialogData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableAccountData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableMyLocationData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDelveData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableSiteSelectionData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDesignViewerData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDesignDetailsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDesignEditorData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDesignBuiltEntityData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableShortcutsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableEarthMateData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDesignInputData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableCopyDesignInputsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableAddBuildingTypesData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableBuildingEditorData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableGcpProjectBillingData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableNavigationControlsViewData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDataTableData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableLayerDetailsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableDataCatalogData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableBoundarySelectionData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableHomescreenData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorablePinnedProjectsData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableIndustrySelectorData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableContourAnalysisData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "NonRestorableAreaFilterData",
+      "file": "state.proto",
+      "namespace": "earth.state"
+    },
+    {
+      "name": "TopToolbarDerivedState",
+      "file": "toptoolbarderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    },
+    {
+      "name": "PlayModeToolbar",
+      "file": "toptoolbarderivedstate.proto",
+      "namespace": "earth.state.derivedstate"
+    }
+  ],
+  "earth.featureupdater": [
+    {
+      "name": "LatLngRect",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LatLngQuad",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Coordinate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "CoordinateUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LookAtCamera",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LookAtCameraUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "VertexList",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "VertexListUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "CoordinateSplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Polygon",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "PolygonUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "VertexListSplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Geometry",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "GeometryUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "IconStyle",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "IconStyleUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LabelStyle",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LabelStyleUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LineStyle",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "LineStyleUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "PolygonStyle",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "PolygonStyleUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "HtmlContent",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "TemplateContent",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "BalloonStyle",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "BalloonStyleUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Style",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "StyleUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "TemplateParameter",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "TemplateParameterUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "AttributeSpec",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "AttributeSpecSplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Attribute",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "AttributeUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Media",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "MediaUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "RasterTileLayer",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "PaintFeLayer",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "EarthDataLayer",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "MapTilePyramid",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "MapTilePyramidUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "GroundOverlay",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "GroundOverlayUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Model",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "ModelUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Mask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Feature",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "FeatureUpdate",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "FeatureUpdateMask",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "GeometrySplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "TemplateParameterSplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "AttributeSplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "MediaSplices",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Replacement",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Update",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Removal",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "Insertion",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    },
+    {
+      "name": "TextFieldId",
+      "file": "featureupdate.proto",
+      "namespace": "earth.featureupdater"
+    }
+  ],
+  "earth.designdetails": [
+    {
+      "name": "DesignDetailsViewModelState",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "SelectedProgramTable",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "NewBuildInputs",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "SolarInputs",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "UserGeneratedName",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "UseTypeInput",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "SustainabilityInputs",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "NewBuildMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "SolarMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "ProgramMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "NewBuildSustainabilityMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "AreaMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "TotalAreaMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "SummaryMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "DesignStatsMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "ParcelMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "Parcel",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "UseMixMetricsByUseType",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "BuildingUnitTypeMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "UnitType",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "UnitTypeMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "ParkingMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "ParkingType",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "ParkingTypeMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "LotMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "ParkQualityMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "EmissionsSummaryMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "CategoryMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "SolarFinancialSummaryMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    },
+    {
+      "name": "FinancialMetrics",
+      "file": "designdetailsviewmodel.proto",
+      "namespace": "earth.designdetails"
+    }
+  ],
+  "geo.earth.proto": [
+    {
+      "name": "Commands",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "Command",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "ClearSearchHistory",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenSearchHistory",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenFeelingLuckyCard",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenVoyagerGrid",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenVoyagerStory",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "PerformSearch",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "LatLonBox",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenKnowledgeCard",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "PlaceMetadata",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "LatLon",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "FlyToCamera",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "Panorama",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "LookAt",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "LookFrom",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenCloudProject",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "PresentMode",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "CreateCloudProject",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "EnterTimeMachine",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "EnterTimelapse",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenKmlDocument",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenProjectByKey",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "OpenKmlDocumentFromContent",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "LatLngAlt",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "CreatePointPlacemark",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "EnterStreetView",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "ToggleLayer",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "SetBasemapStyle",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "CreateFeature",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "CreateFeatureTree",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "DeleteFeature",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "EditFeature",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "CreateFeaturesInFolder",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "SetHomescreenVisibility",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "ViewDesign",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "CreateDesigns",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "RenderDesign",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    },
+    {
+      "name": "ToggleAvailableLayersUi",
+      "file": "commands.proto",
+      "namespace": "geo.earth.proto"
+    }
+  ],
+  "geostore": [
+    {
+      "name": "AccessPointProto",
+      "file": "accesspoint.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressProto",
+      "file": "address.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressComponentProto",
+      "file": "addresscomponent.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressLinesProto",
+      "file": "addresslines.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressRangeProto",
+      "file": "addressrange.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AnchoredGeometryProto",
+      "file": "anchored_geometry.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AttributeProto",
+      "file": "attribute.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AttributeIdProto",
+      "file": "attribute.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AttributeValueDisplayProto",
+      "file": "attribute.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AutonomousDrivingProto",
+      "file": "autonomous_driving.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BestLocaleProto",
+      "file": "bestlocale.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BorderProto",
+      "file": "border.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "OverrideBorderStatusProto",
+      "file": "border.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BuildingProto",
+      "file": "building.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BusinessChainProto",
+      "file": "business_chain.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BusinessHoursProto",
+      "file": "businesshours.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CanonicalGConceptProto",
+      "file": "canonical_gconcept.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CellCoveringProto",
+      "file": "cellcovering.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CityJsonProto",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Transform",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Scale",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Translate",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CityObject",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Geometry",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Semantic",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MultiPoint",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Surface",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MultiSurface",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Solid",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MaterialSpec",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Appearance",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Material",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RgbColor",
+      "file": "cityjson.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CityObjectAttributes",
+      "file": "cityobject_attributes.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrsAffineTransform",
+      "file": "cityobject_attributes.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrsScale",
+      "file": "cityobject_attributes.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrsRotate",
+      "file": "cityobject_attributes.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrsTranslate",
+      "file": "cityobject_attributes.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PointCurvatureProto",
+      "file": "curvature.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CurvatureProto",
+      "file": "curvature.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CurveConnectionProto",
+      "file": "curve_connection.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BezierParams",
+      "file": "curve_connection.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ControlPoint",
+      "file": "curve_connection.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CircleParams",
+      "file": "curve_connection.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DataAgentProto",
+      "file": "data_agent.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DataSourceProto",
+      "file": "datasource.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DataSourceProvider",
+      "file": "datasourceprovider.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DateTimeProto",
+      "file": "datetime.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DisplayDataProto",
+      "file": "display_data.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DisputedAreaProto",
+      "file": "disputed_area.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DoodleProto",
+      "file": "doodle.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DurationBasedRateProto",
+      "file": "durationbasedrate.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ElevationProto",
+      "file": "elevation.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ElevationModelProto",
+      "file": "elevationmodel.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "EntranceProto",
+      "file": "entrance.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "EntranceReferenceProto",
+      "file": "entrance_reference.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "EstablishmentProto",
+      "file": "establishment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BizBuilderReferenceProto",
+      "file": "establishment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "EvChargerProto",
+      "file": "ev_charger.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "OperatorUidProto",
+      "file": "ev_charger.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ConnectorProto",
+      "file": "ev_charger.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "EvStationProto",
+      "file": "ev_station.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ExternalStationIdProto",
+      "file": "ev_station.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ExceptionalHoursProto",
+      "file": "exceptionalhours.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ExistenceProto",
+      "file": "existence.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureProto",
+      "file": "feature.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureFieldMetadataProto",
+      "file": "feature_field_metadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FieldProvenance",
+      "file": "feature_field_metadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ProvenanceProto",
+      "file": "feature_field_metadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureReplacementInfoProto",
+      "file": "feature_replacement_info.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureIdProto",
+      "file": "featureid.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureIdForwardingsProto",
+      "file": "featureidforwardings.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureIdListProto",
+      "file": "featureidlist.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureListProto",
+      "file": "featurelist.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "UnparsedFeatureListProto",
+      "file": "featurelist.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureHistoryMetadataProto",
+      "file": "featuremetadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureMetadataProto",
+      "file": "featuremetadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FieldMetadataProto",
+      "file": "fieldmetadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GConceptInstanceProto",
+      "file": "gconceptinstance.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryStoreReferenceProto",
+      "file": "geometry_store_reference.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeopoliticalProto",
+      "file": "geopolitical.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RegionalPolygonComposingClaimsProto",
+      "file": "geopolitical.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RegionalPolygonAdjustmentProto",
+      "file": "geopolitical.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeopoliticalGeometryProto",
+      "file": "geopolitical_geometry.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GradeLevelProto",
+      "file": "gradelevel.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "HtmlTextProto",
+      "file": "htmltext.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "InferredGeometryProto",
+      "file": "inferred_geometry.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryComposition",
+      "file": "inferred_geometry.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "InternalFeatureProto",
+      "file": "internalfeature.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "InternalFieldMetadataProto",
+      "file": "internalfieldmetadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "InternalSegmentProto",
+      "file": "internalsegment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LaneConnectionReference",
+      "file": "internalsegment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "InternalSourceSummaryProto",
+      "file": "internalsourcesummary.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FieldWithRightsProto",
+      "file": "rightsstatus.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RightsStatusProto",
+      "file": "rightsstatus.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "IntersectionProto",
+      "file": "intersection.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "IntersectionGroupProto",
+      "file": "intersectiongroup.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "KnowledgeGraphReferenceProto",
+      "file": "knowledgegraphreference.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LandUseProto",
+      "file": "landuse.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FlowLineProto",
+      "file": "lane.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LaneProto",
+      "file": "lane.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LaneConnection",
+      "file": "lane.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TollPayment",
+      "file": "lane.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BoundingMarkerProto",
+      "file": "lane.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LaneMarkerProto",
+      "file": "lane_marker.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LinearStripePatternProto",
+      "file": "lane_marker.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PhysicalLineProto",
+      "file": "lane_marker.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PaintedElementLogicalColorProto",
+      "file": "lane_marker.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CrossingStripePatternProto",
+      "file": "lane_marker.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BarrierLogicalMaterialProto",
+      "file": "lane_marker.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LanguageTaggedTextProto",
+      "file": "languagetaggedtext.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LevelProto",
+      "file": "level.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LocaleProto",
+      "file": "locale.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LocaleLanguageProto",
+      "file": "localelanguage.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LogicalBorderProto",
+      "file": "logical_border.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MedianProto",
+      "file": "median.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SegmentLoopProto",
+      "file": "median.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "IndexedComponentProto",
+      "file": "median.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "NameProto",
+      "file": "name.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "OpeningHoursProto",
+      "file": "openinghours.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "OperationsProto",
+      "file": "operations.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FieldIdOptions",
+      "file": "options.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ParkingProto",
+      "file": "parking.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ParkingRestrictionProto",
+      "file": "parking.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ParkingAllowanceProto",
+      "file": "parking.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ParkingAssociationProto",
+      "file": "parking.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PeakProto",
+      "file": "peak.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PedestrianCrossingProto",
+      "file": "pedestriancrossing.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PointProto",
+      "file": "point.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PoliticalProto",
+      "file": "political.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PolygonProto",
+      "file": "polygon.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PolyLineProto",
+      "file": "polyline.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PoseProto",
+      "file": "pose.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceInfoFoodNutritionFacts",
+      "file": "price_info_food_attribute_details.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CaloriesFact",
+      "file": "price_info_food_attribute_details.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "NutritionFact",
+      "file": "price_info_food_attribute_details.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceInfoProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceInfoStatus",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceListProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceListNameInfoProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceListSectionProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FoodMenuItemProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ComposableItemProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "JobMetadata",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "JobRelatedCategory",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CallToActionProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MediaItemProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MediaSize",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FoodMenuItemOptionProto",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Ingredient",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PortionSize",
+      "file": "priceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PriceRangeProto",
+      "file": "pricerange.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PropertyValueStatusProto",
+      "file": "property_value_status.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RankDetailsProto",
+      "file": "rankdetails.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RankSignalProto",
+      "file": "ranksignal.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RawDataProto",
+      "file": "rawdata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RawMetadataProto",
+      "file": "rawmetadata.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RectProto",
+      "file": "rect.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RegionSpecificNameProto",
+      "file": "region_specific_name.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RegulatedAreaProto",
+      "file": "regulated_area.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RelationProto",
+      "file": "relation.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RestrictionProto",
+      "file": "restriction.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RestrictionGroupProto",
+      "file": "restriction_group.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TravelPatternRestrictionProto",
+      "file": "restriction_group.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RightsLevelWrapper",
+      "file": "rightslevel.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoadDisruptionProto",
+      "file": "road_disruption.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CauseProto",
+      "file": "road_disruption.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimestampedStateProto",
+      "file": "road_disruption.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "IntersectionTraversalProto",
+      "file": "road_disruption.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoadMonitorProto",
+      "file": "road_monitor.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoadSignProto",
+      "file": "roadsign.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoadSignComponentProto",
+      "file": "roadsigncomponent.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RouteProto",
+      "file": "route.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SchoolDistrictProto",
+      "file": "schooldistrict.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SegmentProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RampProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RouteAssociationProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LandmarkReferenceProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SweepProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AccidentProneSpotProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoadBarrierProto",
+      "file": "segment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SegmentPortionProto",
+      "file": "segment_portion.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SegmentPathProto",
+      "file": "segmentpath.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ServiceAreaProto",
+      "file": "service_area.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SignProto",
+      "file": "sign.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PositionProto",
+      "file": "sign.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SignpostProto",
+      "file": "signpost.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SkiBoundaryProto",
+      "file": "skiboundary.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SkiLiftProto",
+      "file": "skilift.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SkiTrailProto",
+      "file": "skitrail.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SlopeProto",
+      "file": "slope.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SocialReferenceProto",
+      "file": "socialreference.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SourceInfoProto",
+      "file": "sourceinfo.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SourceInfoListProto",
+      "file": "sourceinfolist.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SpeedProto",
+      "file": "speed_limit.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "VariableSpeedProto",
+      "file": "speed_limit.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "UnlimitedSpeedProto",
+      "file": "speed_limit.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SpeedLimitProto",
+      "file": "speed_limit.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoadConditionalProto",
+      "file": "speed_limit.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AppliedSpeedLimitProto",
+      "file": "speed_limit.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "StableFieldPathProto",
+      "file": "stable_field_path.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "StableFieldSelector",
+      "file": "stable_field_path.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TelephoneProto",
+      "file": "telephone.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TemporaryClosureProto",
+      "file": "temporaryclosure.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TextAffixProto",
+      "file": "text_affix.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PointWithHeightProto",
+      "file": "threedimensionalmodel.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ThreeDimensionalModelProto",
+      "file": "threedimensionalmodel.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimeBasedRateProto",
+      "file": "timebasedrate.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimeEndpointProto",
+      "file": "timeschedule.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimeIntervalProto",
+      "file": "timeschedule.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimeComponentProto",
+      "file": "timeschedule.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimeScheduleProto",
+      "file": "timeschedule.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TimezoneProto",
+      "file": "timezone.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TollPathProto",
+      "file": "toll_path.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TollClusterSequence",
+      "file": "toll_path.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "IndexedTollCluster",
+      "file": "toll_path.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TollClusterProto",
+      "file": "tollcluster.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrackProto",
+      "file": "track.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrafficFlowAdjustment",
+      "file": "traffic_flow_adjustment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "Stop",
+      "file": "traffic_flow_adjustment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SlowDown",
+      "file": "traffic_flow_adjustment.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TransitLineVariantProto",
+      "file": "transit_line_variant.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ServicedStopProto",
+      "file": "transit_line_variant.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TransitLineProto",
+      "file": "transitline.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TransitStationProto",
+      "file": "transitstation.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TransitAgencyAssociationProto",
+      "file": "transitstation.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TravelPatternProto",
+      "file": "travel_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SourceTrustProto",
+      "file": "trustsignals.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TrustSignalsProto",
+      "file": "trustsignals.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "UrlProto",
+      "file": "url.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "UrlListProto",
+      "file": "urllist.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "UserProto",
+      "file": "user.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "VehicleAttributeFilterProto",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "WeightComparisonProto",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "WeightProto",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DimensionComparisonProto",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DimensionProto",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "CountComparisonProto",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ComparisonOperators",
+      "file": "vehicle_attribute_filter.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "VehicleOccupancyRangeProto",
+      "file": "vehicle_occupancy_range.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "VehicleTypes",
+      "file": "vehicle_type.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "VerticalOrderingProto",
+      "file": "vertical_ordering.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AttachmentProto",
+      "file": "attachment.proto",
+      "namespace": "geostore.attachments"
+    },
+    {
+      "name": "AttachmentListProto",
+      "file": "attachment.proto",
+      "namespace": "geostore.attachments"
+    },
+    {
+      "name": "FeaturePropertyIdProto",
+      "file": "feature_property_id.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeaturePropertyIdList",
+      "file": "feature_property_id.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeaturePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressComponentPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressLinesPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AddressPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BorderPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BoundPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "DataSourcePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureIdPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryPointProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryPolylineProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryPolygonProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryCapProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GeometryPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "NamePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BestNamePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RankPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RawDataPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RelatedTimezonePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RelationPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RestrictionPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LandmarkReferencePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SegmentPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "SourceInfoPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TelephonePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "IntegerPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ReflectionPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ExistencePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MatchEnvironmentPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "MatchTemporaryDataProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TermPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LookupListProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AccessPointPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "TransitLinePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "GConceptPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LintPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BuildingPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RoutePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "LevelPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "ClaimPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeatureMetadataPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "AttachmentPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "KGValuePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "KGPropertyPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "BestLocalePatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeaturePropertyIdPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "FeaturePropertyIdPatternListProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "PropertyValueStatusPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RegulatedAreaPatternProto",
+      "file": "feature_pattern.proto",
+      "namespace": "geostore"
+    },
+    {
+      "name": "RawGConceptInstanceProto",
+      "file": "rawgconceptinstance.proto",
+      "namespace": "geostore.ontology"
+    },
+    {
+      "name": "RawGConceptInstanceContainerProto",
+      "file": "rawgconceptinstancecontainer.proto",
+      "namespace": "geostore.ontology"
+    }
+  ],
+  "maps_paint": [
+    {
+      "name": "FeatureOptions",
+      "file": "feature-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "CustomStylerDescription",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "Parameter",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "TextScaleOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "WidthOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "DashPatternOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "VisibilityOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "KeyZoomOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ColorModifyingOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "CategoricalPOIIconColorModifyingOption",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "FeatureSelector",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "FeatureSelectorList",
+      "file": "feature-selector.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "LabelPlacementOptions",
+      "file": "label-placement-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PassthroughPOIsOptions",
+      "file": "label-placement-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "LayerDescription",
+      "file": "layer-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "AuxiliaryParameter",
+      "file": "layer-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "LaunchOptions",
+      "file": "layer-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ThickZoomConfig",
+      "file": "layer-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "SdkFeatureTypeInfo",
+      "file": "legendary.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "VectorDebugOptions",
+      "file": "output-debug-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ImageOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "AvifOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PngOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "JpegOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "WebPOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "TextureOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "AnnotationOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "VectorOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "VectorRasterOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RasterPointLabelOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RasterLineLabelOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "StaticRealtimeOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ElectricVehicleOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "IndoorOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "KmzOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PerTileOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "FeaturemapOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "CopyrightsOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "SvgOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RoadGraphTileOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "GlbOptions",
+      "file": "output-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "OverlayLayerProto",
+      "file": "overlay.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "OverlayIcon",
+      "file": "overlay.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "OverlayPolyline",
+      "file": "overlay.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "OverlayCircle",
+      "file": "overlay.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RoadGraphTileClientProperties",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "NativeClientProperties",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "WebClientProperties",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintRequestTemplate",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "LaunchAndDisableParameters",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintRequestTemplateList",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ZoomTableOverride",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintTemplateResponse",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintParameterRequest",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "UpstreamExperimentOptions",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "DebugSettings",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "LabelRankParameters",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "BoostOffset",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "EpochResources",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RoadGraphTileParameters",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintParameterResponse",
+      "file": "paint-parameters.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintRequest",
+      "file": "paint-request.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "DiagnosticOnlySessionInfo",
+      "file": "paint-request.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintStyleOptions",
+      "file": "paint-style-options.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PipeMetadata",
+      "file": "pipe-metadata.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RegionDescription",
+      "file": "region-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "TileCoordinateDelta",
+      "file": "region-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "RegionRectangle",
+      "file": "region-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "LatLngRegionRectangle",
+      "file": "region-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PixelProto",
+      "file": "region-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "S2TileCoordinateProto",
+      "file": "region-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintResourceRequest",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "IconRequest",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintResource",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "PaintResourceList",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "StyleTableRequest",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "CommonStyleDataRequest",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "GltfBufferRequest",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "CubemapRequest",
+      "file": "resource.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "StyleTableMapping",
+      "file": "style-table-mapping.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "StylerDescription",
+      "file": "styler-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "Parameter",
+      "file": "styler-description.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "TextureRequest",
+      "file": "texture.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ChevronParameters",
+      "file": "texture.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "Chevron",
+      "file": "texture.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "AssetParameters",
+      "file": "texture.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "ColorTransform",
+      "file": "color-modifying-styler.proto",
+      "namespace": "maps_paint"
+    },
+    {
+      "name": "FontProperties",
+      "file": "font-properties.proto",
+      "namespace": "maps_paint"
+    }
+  ],
+  "maps_tactile": [
+    {
+      "name": "AdsParams",
+      "file": "ads-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "AdsEntity",
+      "file": "ads-spotlight.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "CameraOptions",
+      "file": "camera-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "Distance",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "WaypointQuery",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "LocationFilters",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "UserProvidedEvInfo",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "ViaPoint",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "AnchoredTime",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "ElectricVehicleChargingStationDetails",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "ElectricVehicleTripPlanningInfo",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "WaypointIdentifier",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "Options",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TripUpdateInput",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "RerouteInput",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TravelModeMinimumDetailLevelRestriction",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "PrecomputedRouteInput",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TrafficReportOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TravelModeOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "BlendedFilteringOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "RankingSignals",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TravelModePreference",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "RecommendedFilteringOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "RequestedTripGrouping",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TravelModeCentricOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "AlternateTravelMode",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TripComparisonOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "AllowedTravelMode",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "WaypointAlertOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "Alert",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TransitOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TransitVehicleTypePreference",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "ReachabilitySpec",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TransitNetworkOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "LineAggregationOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "FareTypePreference",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "MultimodalOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "MultimodalTripTypes",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "InformalTransitOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "DrivingOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "LicensePlateRestriction",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "SupportedLicensePlateCity",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "ElevationProfileOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TwoWheelerOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "WalkingOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "CyclingOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "BikesharingOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "RequestedResultTypes",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "BikeStationRerouteTokens",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "TaxiOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "RequestedResultTypes",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "ParkingOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "OffstreetParking",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "DirectionsSuggestionContext",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "SpotlightOptions",
+      "file": "directions-common.proto",
+      "namespace": "maps_tactile.directions"
+    },
+    {
+      "name": "DirectionsRequest",
+      "file": "directions-request.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "DirectionsRequestLoggingParams",
+      "file": "directions-request.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "UpdateRouteParams",
+      "file": "directions-request.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "DirectionsWaypointSearchboxStats",
+      "file": "directions-request.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "Entity",
+      "file": "entity-details-common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "LatLng",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "LatLngRectangle",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "LatLngPolygon",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "RasterPoint",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "RasterRectangle",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "LoggingParams",
+      "file": "logging-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "EventExtraLoggingData",
+      "file": "logging-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "MapLayerState",
+      "file": "logging-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "PaintDescriptionOptions",
+      "file": "paint-description-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "SearchMapLayerOptions",
+      "file": "paint-description-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "RequestContext",
+      "file": "request-context.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "SearchTimeRestrictParams",
+      "file": "search-restrict-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "VacationRentalsRestrictParams",
+      "file": "search-restrict-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "SearchRestrictParams",
+      "file": "search-restrict-params.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "ElectricVehicleOptions",
+      "file": "electric-vehicle-options.proto",
+      "namespace": "maps_tactile.shared.automotive"
+    },
+    {
+      "name": "TripPreferences",
+      "file": "electric-vehicle-options.proto",
+      "namespace": "maps_tactile.shared.automotive"
+    },
+    {
+      "name": "OemPaymentNetwork",
+      "file": "electric-vehicle-options.proto",
+      "namespace": "maps_tactile.shared.automotive"
+    },
+    {
+      "name": "CacheDirectiveParams",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "CacheDirective",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "CacheCondition",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "Age",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "ViewportOverlap",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "ViewportZoom",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "UserLocation",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "DailyTimeRange",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "TimeOfDay",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "InAppUserDataModification",
+      "file": "caching.proto",
+      "namespace": "maps_tactile.shared.caching"
+    },
+    {
+      "name": "LocalizationContext",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "BuildingLevel",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "AliasId",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "Alias",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "EvInfo",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "AliasLocationInterpretation",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "DisplayCount",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "Count",
+      "file": "common.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "Instant",
+      "file": "date-time.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "Duration",
+      "file": "date-time.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "FormattedDuration",
+      "file": "date-time.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "LocalDateTime",
+      "file": "date-time.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "Date",
+      "file": "date-time.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "TimeOfDay",
+      "file": "date-time.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "AssistedDrivingOptions",
+      "file": "assisted-driving-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "DatasetInfo",
+      "file": "assisted-driving-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "VehicleInfo",
+      "file": "assisted-driving-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "AssistedDrivingStateInfo",
+      "file": "assisted-driving-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "StateInfo",
+      "file": "assisted-driving-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "DirectionsClientStats",
+      "file": "directions-client-stats.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "DynamicClosureOptions",
+      "file": "dynamic-closure-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "DynamicClosure",
+      "file": "dynamic-closure-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "UserReportedClosure",
+      "file": "dynamic-closure-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "ImageOptions",
+      "file": "image-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "OpaqueTripOption",
+      "file": "opaque-trip-option.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "OpaqueTripOptions",
+      "file": "opaque-trip-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "RoadsideFacilityOptions",
+      "file": "roadside-facility-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "TollPriceOptions",
+      "file": "toll-price-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "TollPass",
+      "file": "toll-price-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "TripResultDisplayStylesMap",
+      "file": "transit-trip-result-display-style.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "VoiceGuidanceOptions",
+      "file": "voice-guidance-options.proto",
+      "namespace": "maps_tactile.shared.directions"
+    },
+    {
+      "name": "ExperiencesParams",
+      "file": "experiences.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "ExperienceClientCapabilities",
+      "file": "experiences.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "FeatureId",
+      "file": "feature-id.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "LatLng",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "LatLngRectangle",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "LatLngPolygon",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "LatLngPolyline",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "RasterPoint",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "RasterRectangle",
+      "file": "geometry.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "HotelDisplayConfig",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "HotelBookingOptions",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "PersonalizationParams",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "FeatureOptions",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "AlternativeHotelsParams",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "AspectBasedAlternativeHotelsParams",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "VacationRentalAttributesOptions",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "RoomsOptions",
+      "file": "hotel-booking-options.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "HotelMapLayerOptions",
+      "file": "hotel-map-layer-options.proto",
+      "namespace": "maps_tactile.shared.hotels"
+    },
+    {
+      "name": "Itinerary",
+      "file": "itinerary.proto",
+      "namespace": "maps_tactile.shared.hotels"
+    },
+    {
+      "name": "MapsLiveQueryConfig",
+      "file": "maps-live-query-config.proto",
+      "namespace": "maps_tactile.shared.hotels"
+    },
+    {
+      "name": "PersistenceKeys",
+      "file": "maps-activity-persistence-keys.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "OpaqueToken",
+      "file": "maps-activity-persistence-keys.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "PlaceListDescriptor",
+      "file": "maps-activity-place-list-common.proto",
+      "namespace": "maps_tactile.shared.placelist"
+    },
+    {
+      "name": "UiSurface",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "ContentMask",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "CelebrationExploreCardData",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "Theme",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "QuerySuggestion",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "PrefetchContext",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "PrefetchOptions",
+      "file": "passiveassist.proto",
+      "namespace": "maps_tactile.shared.passiveassist"
+    },
+    {
+      "name": "RenderStrategy",
+      "file": "render-strategy.proto",
+      "namespace": "maps_tactile.shared.photo"
+    },
+    {
+      "name": "MapsPlaceIdentifier",
+      "file": "maps-place-identifier.proto",
+      "namespace": "maps_tactile.shared.place"
+    },
+    {
+      "name": "PlaceComparisonDataOptions",
+      "file": "place-comparison-data-options.proto",
+      "namespace": "maps_tactile.shared.place"
+    },
+    {
+      "name": "CostOptions",
+      "file": "cost-options.proto",
+      "namespace": "maps_tactile.shared.placepreview"
+    },
+    {
+      "name": "PhotoPreviewOptions",
+      "file": "photo-preview-options.proto",
+      "namespace": "maps_tactile.shared.placepreview"
+    },
+    {
+      "name": "PlacePreviewFieldMask",
+      "file": "place-preview-field-mask.proto",
+      "namespace": "maps_tactile.shared.placepreview"
+    },
+    {
+      "name": "GeocodeOptions",
+      "file": "place-preview-field-mask.proto",
+      "namespace": "maps_tactile.shared.placepreview"
+    },
+    {
+      "name": "CategoryOptions",
+      "file": "place-preview-field-mask.proto",
+      "namespace": "maps_tactile.shared.placepreview"
+    },
+    {
+      "name": "ScalableAttributeOptions",
+      "file": "scalable-attribute-options.proto",
+      "namespace": "maps_tactile.shared.placepreview"
+    },
+    {
+      "name": "PromotedPinAdsRequestOptions",
+      "file": "promoted-pin-ads.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "IconOptions",
+      "file": "promoted-pin-ads.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "ListCategory",
+      "file": "public-list.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "PublicListParams",
+      "file": "public-list.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "QuerySuggestion",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "FusedTopicMetadata",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "PublicListQuery",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "ExperienceCategoricalQuery",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "LocalCategoricalPresetQuery",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "QuerySuggestionSet",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "AssistiveShortcutsLoggingInfo",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "PresetQueryRequestMetadata",
+      "file": "query-suggestion.proto",
+      "namespace": "maps_tactile.shared"
+    },
+    {
+      "name": "SerializedDataReference",
+      "file": "serialized-data-reference.proto",
+      "namespace": "maps_tactile"
+    },
+    {
+      "name": "LongDistanceOptions",
+      "file": "long-distance-options.proto",
+      "namespace": "maps_tactile.shared.transit"
+    },
+    {
+      "name": "TransitLoggingContext",
+      "file": "transit-logging-context.proto",
+      "namespace": "maps_tactile.shared.transit"
+    },
+    {
+      "name": "TransitServiceQuery",
+      "file": "transit-service-query.proto",
+      "namespace": "maps_tactile.shared.transit"
+    },
+    {
+      "name": "VehicleTypeCategory",
+      "file": "transit-service-query.proto",
+      "namespace": "maps_tactile.shared.transit"
+    },
+    {
+      "name": "UrlOptions",
+      "file": "url-options.proto",
+      "namespace": "maps_tactile"
+    }
+  ]
+}
